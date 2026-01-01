@@ -1238,6 +1238,290 @@ html {
     height: 100%;
 }
 
+.directory-container {
+    display: inline-block;
+    margin-top: 100px;
+    box-sizing: border-box; 
+}
+
+.directory {
+    float: left;
+    width: 50%;
+    background-color: #fbf7f1;
+    border-radius: 15px;
+    padding: 20px 30px 10px 30px;
+    margin-left: 265px;
+    margin-bottom: 30px;
+    scroll-margin-top: 120px;
+    overflow: hidden;
+}
+
+/* 目录标题区域 */
+.directory-header {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+    /* border-bottom: 1px solid #cec1ab */
+}
+
+.directory-title {
+    font-size: 1.5rem;
+    color: #5a4d3e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.directory-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 0px;    
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+}
+
+.directory-tags {
+    margin-right: 15px;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: #5a4d3e;
+}
+
+.stat-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 推荐词区域 */
+.recommendation {
+    position: relative;
+    margin: 25px 0 20px;
+    padding: 0 25px;
+}
+
+.recommendation-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #999;
+    font-style: italic;
+    font-family: "PingFang SC";
+    padding: 0 10px;
+}
+
+.quote {
+    color: #b59e7d;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    line-height: 1;
+}
+
+.quote-left {
+    top: -15px;
+    left: 0;
+}
+
+.quote-right {
+    display: inline-block;
+    transform: rotate(180deg);
+    animation: flipIn 0.6s ease-out forwards;
+    bottom: -20px;
+    right: 20px;
+}
+
+.info {
+    margin-top: 10px;
+    color: #5a4d3e;
+}
+
+/* 底部信息区域 */
+.directory-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 5px;
+    border-top: 1px solid #e8dfd3;
+}
+
+.creation-date {
+    color: #7a6c5a;
+    font-size: 14px;
+}
+
+.expand-btn {
+    background-color: #e8dfd3;
+    border: none;
+    border-radius: 6px;
+    margin-top: 5px;;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #5a4d3e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+}
+
+.expand-btn:hover {
+    background-color: #d9cdbc;
+    transform: translateY(-2px);
+}
+
+.expand-icon {
+    transition: transform 0.3s;
+}
+
+.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* 目录条目列表 */
+.directory-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.expanded .directory-content {
+    max-height: 1000px;
+    margin-top: 25px;
+}
+
+.directory-list {
+    list-style: none;
+}
+
+.directory-item {
+    padding: 20px;
+    border-bottom: 1px solid #e8dfd3;
+    transition: background-color 0.2s;
+}
+
+.directory-item:hover {
+    background-color: #f5f0e8;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: #2c6fb7;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.item-name:hover {
+    color: #1a4d8c;
+    text-decoration: underline;
+}
+
+.item-type {
+    font-size: 13px;
+    color: #7a6c5a;
+    background-color: #f0e9df;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item-recommendation {
+    position: relative;
+    padding: 0 20px;
+    margin-top: 8px;
+}
+
+.item-recommendation-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #7a6c5a;
+    font-style: italic;
+    padding: 0 10px;
+}
+
+.item-quote {
+    color: #b59e7d;
+    font-size: 32px;
+    font-family: Georgia, "Times New Roman", serif;
+    position: absolute;
+    line-height: 1;
+}
+
+.item-quote-left {
+    top: -8px;
+    left: 0;
+}
+
+.item-quote-right {
+    bottom: -15px;
+    right: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .directory-container {
+        padding: 20px;
+    }
+    
+    .directory-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .stats {
+        gap: 10px;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .quote {
+        font-size: 36px;
+    }
+    
+    .quote-left {
+        top: -10px;
+    }
+    
+    .quote-right {
+        bottom: -18px;
+    }
+    
+    .item-quote {
+        font-size: 24px;
+    }
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     h1 {
