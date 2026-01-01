@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <ul class="nav">
+        <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
+        <li><a href="main.html" class="title">首页</a>
+        <li><a href="essay.html" class="title">随笔</a>
+            <!-- <ul class="dropdown">
+                <li><a href="#">觅食报告</a></li>
+                <li><a href="citybike.html">citybike记录</a></li>
+                <li><a href="book.html">书影音推荐</a></li>
+                <li><a href="#">小作文们</a></li>
+            </ul> -->
+        </li>
+        <li><a href="gallery.html" class="title">相册</a></li>
+        <li><a href="recomendations.html" class="title">目录</a></li>
+        <!-- <li>
+            <a href="#" class="title">语言</a>
+            <ul class="dropdown">
+                <li><a href="#">中文</a></li><br>
+                <li><a href="#">English</a></li>
+            </ul>
+        </li> -->
+    </ul>
+
+    <!-- 公告板 -->
+    <div id="announcementOverlay" class="overlay">
+        <div class="board-wrapper">
+            <span id="closeBoard" class="close-btn-outer">&times;</span>
+            
+            <div class="announcement-board">
+                <div class="board-header">
+                    <div class="note-title">公告 / Announcement</div>
+                </div>
+                <div class="board-content">
+                    <p>写这个blog已经写得人精神状态濒临崩溃了<img src="./imgs/m/bocchi seizures.GIF" alt="抽搐.jpg"></p>
+                    <p>其实本来有很多<span class="cross">伟大</span>的设想但都没有来得及做，也有很多有趣的东西没来得及放上去，还有一些很明显的bug。目前先用github静态部署，之后可能会考虑搞个服务器，但也算是在自己设的ddl（2026.1.1）前完成了。</p>
+                    <p>在此特别鸣谢我的四位非人类老师（）能遇见你们真好</p>
+                    <p>会努力更新的，所以，欢迎常来看看。忘了在哪看到过一句话：</p>
+                    <p class="quotes">“人生在你死之前都处于未完成状态。”</p>
+                    <p>我想这个小网站也是。</p>
+                </div>
+                <div class="note-info">
+                    <span class="note-tag">Welcome</span>
+                    <span class="note-tag">Guide</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('announcementOverlay');
+            const firstVisitLink = document.getElementById('firstVisit'); // 确保你的导航栏“初次来访”ID正确
+            const closeBtn = document.getElementById('closeBoard');
+
+            // 打开公告板
+            if (firstVisitLink) {
+                firstVisitLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 禁止页面滚动
+                });
+            }
+
+            // 点击叉号关闭
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // 点击背景变暗区域关闭
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+    <!-- 左栏 - 目录 -->
+    <div class="left-bar-1">
+        <ul><span class="bar-title">目录</span>
+            <li><a href="#food" onclick="highlightLink(this)">觅食报告</a></li>
+            <li><a href="#travel" onclick="highlightLink(this)">旅行</a></li>
+            <li><a href="#memes" onclick="highlightLink(this)">无意义memes</a></li>
+        </ul>
+    </div>
+
+    <!-- 相册 -->
+    <div class="content">
+        <div class="gallery" id="food">
+             <div class="row-3">
+                <div class="left-column-3">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184753_485_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184800_488_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184755_486_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184757_487_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <span class="post-date">是限时联动～</span>小面包的omakase
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="right-column-3">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/2025.12.8 4.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/2025.12.8 3.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/2025.12.8 5.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="text">
+                            有糯米 you know me<br>Mēr coffee（西四店）
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184418_417_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251224200158_795_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="text">
+                            柚见dirty<br>1/4 ONE QUARTER COFFEE</div>
+                        </div>
+                    <!-- <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/meme/20.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/3.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/6.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/7.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/8.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/9.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/16.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/18.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/22.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/23.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span>
+                                <span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span>
+                                <span class="carousel-indicator" data-slide="7"></span><span class="carousel-indicator" data-slide="8"></span>
+                                <span class="carousel-indicator" data-slide="9"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date">伤痛文学</span>Sad Memes</div>
+                    </div>
+
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/travel/germany/h7.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h1.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h2.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h3.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h4.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h5.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/travel/germany/h6.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date">漫步海德堡 I</span>Heidelberg I</div>
+                    </div> -->
+                    <!-- <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205174537_361_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184539_430_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="text">
+                            <span class="post-date">李茶的茶</span>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/meme/11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/14.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date"></span>有趣的帖子#1</div>
+                    </div> -->
+
+                    
+                    
+
+                    <!-- <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184709_467_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184711_468_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184749_484_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184727_475_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184713_469_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184730_476_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184735_478_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184741_481_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184702_464_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184656_461_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184653_460_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184651_459_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184648_458_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184643_456_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184641_455_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span>
+                                <span class="carousel-indicator" data-slide="4"></span>
+                                <span class="carousel-indicator" data-slide="5"></span>
+                                <span class="carousel-indicator" data-slide="6"></span>
+                                <span class="carousel-indicator" data-slide="7"></span>
+                                <span class="carousel-indicator" data-slide="8"></span>
+                                <span class="carousel-indicator" data-slide="9"></span>
+                                <span class="carousel-indicator" data-slide="10"></span>
+                                <span class="carousel-indicator" data-slide="11"></span>
+                                <span class="carousel-indicator" data-slide="12"></span>
+                                <span class="carousel-indicator" data-slide="13"></span>
+                                <span class="carousel-indicator" data-slide="14"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <span class="post-date">本次MVP：熏带鱼</span>新荣记的夏季穷鬼套餐
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184818_493_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184813_492_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/2025.12.8 9.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/2025.12.8 7.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/2025.12.8 8.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                            <span class="carousel-indicator" data-slide="4"></span>
+                            <span class="carousel-indicator" data-slide="5"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date"></span>三明治们！
+                    </div>
+                </div>
+            
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205185000_517_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184955_516_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/shanghai/1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/shanghai/2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/shanghai/3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/shanghai/4.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/shanghai/5.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                            <span class="carousel-indicator" data-slide="4"></span>
+                            <span class="carousel-indicator" data-slide="5"></span>
+                            <span class="carousel-indicator" data-slide="6"></span>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <span class="post-date"></span>上海
+                    </div>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180612_377_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184149_393_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184155_394_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182039_392_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251231203734_1010_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251231203752_1011_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                            <span class="carousel-indicator" data-slide="4"></span>
+                            <span class="carousel-indicator" data-slide="5"></span>
+                            <span class="carousel-indicator" data-slide="6"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date"></span>美式高糖油的快乐
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251231205249_1013_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251231205256_1017_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251231205257_1018_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184223_401_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165812_292_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184251_406_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184351_407_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184355_408_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184541_431_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184544_432_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                            <span class="carousel-indicator" data-slide="4"></span>
+                            <span class="carousel-indicator" data-slide="5"></span>
+                            <span class="carousel-indicator" data-slide="6"></span>
+                            <span class="carousel-indicator" data-slide="7"></span>
+                            <span class="carousel-indicator" data-slide="8"></span>
+                            <span class="carousel-indicator" data-slide="9"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date">Top1是Ninini的草莓西瓜蛋糕（p3)</span>京内的小蛋糕们
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180604_375_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180558_373_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180601_374_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180455_372_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date">我心中京内top1的小油菜</span>蘇飯
+                    </div>
+                </div>
+            </div>  
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165926_307_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180619_379_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251224192118_790_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184404_412_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251224201040_797_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                            <span class="carousel-indicator" data-slide="4"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date">青小山/23座/久喜町/Shakeshack</span>一人食
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182017_388_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182021_389_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182010_386_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182030_390_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                            <span class="carousel-indicator" data-slide="3"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date">私心偏爱的江浙菜小馆子</span>曲廊院3·3食档
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                 <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165824_295_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165812_292_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165815_293_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+                    <div class="text">开府莱舍</div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165630_276_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165623_273_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205165620_272_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <span class="post-date">烧鹅太鲜美了</span>肥福排档
+                    </div>
+                </div> 
+            </div>
+                    <!-- <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180855_383_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180901_384_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251224192331_792_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205180848_382_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205182039_392_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="text">
+                            <span class="post-date">推荐：奥利奥巴斯克吐司</span>24 bakers
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184232_403_11.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184240_404_11.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-next">
+                                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="text">
+                            <span class="post-date">推荐：醍醐芝士酥</span>梅潭村
+                        </div>
+                    </div>
+                </div>   -->
+                
+            <!-- <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184551_435_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184554_436_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184557_437_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184559_438_11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/food/Weixin Image_20251205184602_439_11.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev">
+                            <svg width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text">
+                        <span class="post-date">幸福就是两片表面焦脆的棕奶酪三明治！</span>小面包#2
+                    </div>
+                </div>
+            </div>  -->
+        </div>
+
+         <div class="gallery" id="travel">
+             <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/b1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b7.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b5.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b4.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b6.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/b9.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span><span class="carousel-indicator" data-slide="7"></span><span class="carousel-indicator" data-slide="8"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date"></span>黑森林 Schwarzwald</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/f1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f4.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f5.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f6.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/f7.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date">法兰克福</span>Frankfurt</div>
+                </div>
+                <!-- <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/h8.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h9.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h10.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h12.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h13.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date">漫步海德堡 II</span>Heidelberg II</div>
+                </div> -->
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/fl1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/fl2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/t1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/t2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/t3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/t4.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date">弗赖堡与托特瑙</span>Freiburg & Todtnau</div>
+                </div>
+            </div>
+
+            <div class="row-1">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/c1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/c2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/c3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/ha2.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date"></span>汉堡 - 科隆 Hamburg - Köln</div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl5.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl6.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl7.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl9.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl13.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl15.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span><span class="carousel-indicator" data-slide="7"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date"></span>柏林 I Berlin I</div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/h8.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h7.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h5.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h6.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h9.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date"></span>海德堡 I Heidelberg I</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/p1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/p2.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl8.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/p3.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date">哲学家的墓们</span>Philosophers' Graves</div>
+                </div>
+
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/s4.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/s5.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/s6.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/w1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h10.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h12.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/h13.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/ha1.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span><span class="carousel-indicator" data-slide="7"></span><span class="carousel-indicator" data-slide="8"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date"></span>零碎足迹 Scattered Footprints</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="post">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl14.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl1.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl3.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl4.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl10.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl11.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl12.jpg"></div>
+                            <div class="slide"><img src="./imgs/g/travel/germany/bl16.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span><span class="carousel-indicator" data-slide="7"></span>
+                        </div>
+                    </div>
+                    <div class="text"><span class="post-date">柏林 II</span>Berlin II</div>
+                </div>
+            </div>
+         </div>   
+
+        <div class="gallery" id="memes">
+            <div class="row">
+                <div class="left-column-3">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/meme/20.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/2.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/4.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/5.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/12.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/15.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/17.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/19.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/29.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span>
+                                <span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6"></span>
+                                <span class="carousel-indicator" data-slide="7"></span><span class="carousel-indicator" data-slide="8"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date"></span>Memes I</div>
+                    </div>
+                </div>
+                <div class="right-column-3">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/meme/21.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/24.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/25.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/26.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date"></span>猫猫memes Cat Memes</div>
+                    </div>
+
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./imgs/g/meme/27.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/28.jpg"></div>
+                                <div class="slide"><img src="./imgs/g/meme/10.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date"></span>哲学Memes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. 选中所有的 post 容器
+        const posts = document.querySelectorAll('.post');
+
+        // 2. 遍历每一个 post，为其独立初始化逻辑
+        posts.forEach((post) => {
+            const wrapper = post.querySelector('.slides-wrapper');
+            const slides = post.querySelectorAll('.slide');
+            const prevBtn = post.querySelector('.carousel-prev');
+            const nextBtn = post.querySelector('.carousel-next');
+            const indicators = post.querySelectorAll('.carousel-indicator');
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // 如果该 post 内没有图片，跳过
+            if (totalSlides === 0) return;
+
+            function updateCarousel() {
+                // 移动当前 post 下的图片容器
+                wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // 更新当前 post 下的指示点
+                indicators.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // 下一张按钮（仅控制当前 post）
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            });
+
+            // 上一张按钮（仅控制当前 post）
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+
+            // 点击指示点跳转（仅控制当前 post）
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        });
+    });
+    </script>
+
+    <!-- 右栏 -->
+    <div class="right-bar">
+        <!-- 近期更新 -->
+        <div class="right-bar-1">
+            <span class="bar-title-right">近期更新</span>
+            <ul>
+                <li>
+                    <a href="recomendations.html#index-1">2025年值得一看的TV新作</a>
+                    <span class="small">2025.12.31</span>
+                </li>
+                <li>
+                    <a href="gallery.html#memes">相册 > 无意义memes</a>
+                    <span class="small">2025.12.25</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-6">个人2025年度原画师</a>
+                    <span class="small">2025.12.21</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-5">Some Interpretions on The Catcher in the Rye</a>
+                    <span class="small">2025.12.16</span>
+                </li>
+                <li>
+                    <a href="recomendations.html#inde-2">青春狂想曲</a>
+                    <span class="small">2025.12.11</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="right-bar-2">
+            <div class="g-search-container">
+                <div class="g-search-box">
+                    <div class="g-search-input-wrapper">
+                        <span class="g-search-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <input type="text" id="gallerySearchInput" placeholder="搜索画廊中的地点、足迹或描述..." autocomplete="off">
+                    </div>
+                    
+                    <div id="gallerySearchResults" class="g-results-panel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // 3. Gallery 搜索逻辑
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const gInput = document.getElementById('gallerySearchInput');
+            const gResults = document.getElementById('gallerySearchResults');
+
+            if (!gInput || !gResults) return;
+
+            gInput.addEventListener('input', function() {
+                const keyword = this.value.trim().toLowerCase();
+                if (!keyword) {
+                    gResults.style.display = 'none';
+                    return;
+                }
+
+                // 获取画廊中所有的 .post 元素
+                const posts = document.querySelectorAll('.post');
+                gResults.innerHTML = '';
+                let matchCount = 0;
+
+                posts.forEach(post => {
+                    const textContainer = post.querySelector('.text');
+                    if (!textContainer) return;
+
+                    const fullText = textContainer.innerText;
+                    if (fullText.toLowerCase().includes(keyword)) {
+                        matchCount++;
+
+                        // 提取日期和主要标题
+                        const dateTag = post.querySelector('.post-date')?.innerText || "";
+                        const mainTitle = fullText.replace(dateTag, "").trim();
+
+                        const item = document.createElement('div');
+                        item.className = 'g-result-item';
+                        item.innerHTML = `
+                            <span class="g-res-title">${highlightGText(mainTitle, keyword)}</span>
+                            <span class="g-res-date">${dateTag}</span>
+                        `;
+
+                        // 点击跳转逻辑
+                        item.addEventListener('click', () => {
+                            post.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // 视觉提醒：蓝色边框反馈
+                            post.style.transition = 'outline 0.3s, box-shadow 0.3s';
+                            post.style.outline = '3px solid #3498db';
+                            post.style.boxShadow = '0 0 20px rgba(52, 152, 219, 0.3)';
+                            
+                            setTimeout(() => {
+                                post.style.outline = 'none';
+                                post.style.boxShadow = 'none';
+                            }, 2000);
+
+                            gResults.style.display = 'none';
+                            gInput.value = mainTitle;
+                        });
+
+                        gResults.appendChild(item);
+                    }
+                });
+
+                if (matchCount > 0) {
+                    const bar = document.createElement('div');
+                    bar.className = 'g-stats-bar';
+                    bar.innerText = `找到 ${matchCount} 个匹配的足迹`;
+                    gResults.insertBefore(bar, gResults.firstChild);
+                    gResults.style.display = 'block';
+                } else {
+                    gResults.innerHTML = '<div class="g-no-match">未找到相关内容</div>';
+                    gResults.style.display = 'block';
+                }
+            });
+
+            function highlightGText(text, key) {
+                const re = new RegExp(`(${key})`, 'gi');
+                return text.replace(re, '<span class="g-highlight">$1</span>');
+            }
+
+            // 点击空白关闭
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.g-search-box')) {
+                    gResults.style.display = 'none';
+                }
+            });
+        });
+    })();
+    </script>
+
+    <script>
+        // 目录链接高亮函数
+        function highlightLink(element) {
+            // 移除所有active类
+            document.querySelectorAll('.left-bar-1 a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 给当前点击的链接添加active类
+            element.classList.add('active');
+        }
+        
+        // 根据滚动位置高亮当前阅读的笔记
+        function highlightCurrentNote() {
+            const notes = document.querySelectorAll('.gallery');
+            const links = document.querySelectorAll('.left-bar-1 a');
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const clientHeight = document.documentElement.clientHeight;
+            
+            if (scrollTop + clientHeight >= scrollHeight - 10) {
+                links.forEach(link => link.classList.remove('active'));
+                if (links.length > 0) {
+                    links[links.length - 1].classList.add('active');
+                }
+                return; // 直接返回，不再执行后续逻辑
+            }
+            // ----------------------
+            
+            // 找到当前最靠近视口顶部的笔记
+            let currentNoteId = null;
+            let minDistance = Infinity;
+            
+            notes.forEach(note => {
+                const rect = note.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+                
+                if (distance < minDistance && rect.top <= 150) {
+                    minDistance = distance;
+                    currentNoteId = note.id;
+                }
+            });
+            
+            // 更新链接高亮
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentNoteId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 监听滚动事件，高亮当前阅读的笔记
+        window.addEventListener('scroll', highlightCurrentNote);
+        
+        // 页面加载时执行一次高亮
+        document.addEventListener('DOMContentLoaded', highlightCurrentNote);
+    </script>
+</body>
+</html>
