@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <ul class="nav">
+        <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
+        <li><a href="main.html" class="title">首页</a>
+        <li><a href="essay.html" class="title">随笔</a>
+            <!-- <ul class="dropdown">
+                <li><a href="#">觅食报告</a></li>
+                <li><a href="citybike.html">citybike记录</a></li>
+                <li><a href="book.html">书影音推荐</a></li>
+                <li><a href="#">小作文们</a></li>
+            </ul> -->
+        </li>
+        <li><a href="gallery.html" class="title">相册</a></li>
+        <li><a href="recomendations.html" class="title">目录</a></li>
+        <!-- <li>
+            <a href="#" class="title">语言</a>
+            <ul class="dropdown">
+                <li><a href="#">中文</a></li><br>
+                <li><a href="#">English</a></li>
+            </ul>
+        </li> -->
+    </ul>
+
+    <!-- 公告板 -->
+    <div id="announcementOverlay" class="overlay">
+        <div class="board-wrapper">
+            <span id="closeBoard" class="close-btn-outer">&times;</span>
+            
+            <div class="announcement-board">
+                <div class="board-header">
+                    <div class="note-title">公告 / Announcement</div>
+                </div>
+                <div class="board-content">
+                    <p>写这个blog已经写得人精神状态濒临崩溃了<img src="./imgs/m/bocchi seizures.GIF" alt="抽搐.jpg"></p>
+                    <p>其实本来有很多<span class="cross">伟大</span>的设想但都没有来得及做，也有很多有趣的东西没来得及放上去，还有一些很明显的bug。目前先用github静态部署，之后可能会考虑搞个服务器，但也算是在自己设的ddl（2026.1.1）前完成了。</p>
+                    <p>在此特别鸣谢我的四位非人类老师（）能遇见你们真好</p>
+                    <p>会努力更新的，所以，欢迎常来看看。忘了在哪看到过一句话：</p>
+                    <p class="quotes">“人生在你死之前都处于未完成状态。”</p>
+                    <p>我想这个小网站也是。</p>
+                </div>
+                <div class="note-info">
+                    <span class="note-tag">Welcome</span>
+                    <span class="note-tag">Guide</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('announcementOverlay');
+            const firstVisitLink = document.getElementById('firstVisit'); // 确保你的导航栏“初次来访”ID正确
+            const closeBtn = document.getElementById('closeBoard');
+
+            // 打开公告板
+            if (firstVisitLink) {
+                firstVisitLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 禁止页面滚动
+                });
+            }
+
+            // 点击叉号关闭
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // 点击背景变暗区域关闭
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+    <!-- 左栏 - 目录 -->
+    <div class="left-bar-1">
+        <ul>
+            <span class="bar-title">资源目录</span>
+            <li><a href="#sites" onclick="highlightLink(this)">有趣网站</a></li>
+            <li><a href="#tools" onclick="highlightLink(this)">常用工具</a></li>
+            <li><a href="#database" onclick="highlightLink(this)">资料库</a></li>
+            <li><a href="#forums" onclick="highlightLink(this)">社区论坛</a></li>
+            <li><a href="#acgn" onclick="highlightLink(this)">ACGN相关</a></li>
+        </ul>
+    </div>
+
+    <!-- 正文 -->
+    <div class="note-container-src">
+        <div class="note" id="">
+            <div class="note-header">
+                <div class="note-title">资源合集</div>
+                <div class="note-info">
+                    <div class="note-date">
+                        <span class="date-icon"></span>
+                        <span>更新日期：2025年12月5日</span>
+                    </div>
+                    <div class="note-mood"></div>
+                    <div class="note-tags">
+                        <a href="#" class="note-tag">工具箱</a>
+                        <a href="#" class="note-tag">典藏</a>
+                        <a href="#" class="note-tag">总之就是很重要</a>
+                    </div>
+                </div>
+            </div>
+            <div class="note-content">
+                <div class="src">
+                    <h3 id="sites">有趣网站</h3>
+                    <a href="https://www.personality-database.com/">personality-database</a>
+                    <a href="https://lab.magiconch.com/">神奇海螺试验场（某大佬的个人网站）</a>
+                    <a href="https://xingye.me/game/index.php">星夜的games（又是一位佬的个人blog））</a>
+                    <a href="https://cook.yunyoujun.cn/">做饭灵感</a>
+                    <a href="https://archive.org/">Internet Archive</a>
+                    <a href="https://bezier.method.ac/">练习贝塞尔曲线的绘制</a>
+                    <h3 id="tools">工具</h3>   
+                    <a href="https://cnvmp3.com/v51">Youtube视频下载器</a>
+                    <a href="https://convertio.co/">convertio文件转换器</a>
+                    <a href="https://snapany.com/zh/bilibili">bilibili视频下载</a>
+                    <a href="https://awesomevideoeditor.com/">加字幕</a>
+                    <a href="https://imgse.com/">图床（并非好用）</a>
+                    <a href="https://p.sda1.dev/">也是图床</a>
+                    <a href="https://catbox.moe/">catbox图床</a>
+                    <a href="https://www.oxfordlearnersdictionaries.com/">牛津词典</a>    
+                    <a href="https://rdfz.jyyun.com/">rdfz校园网(别科学上网)</a>
+                    <a href="https://greasyfork.org/">Greasyfork</a>
+                    <a href="https://rsshub.netlify.app/">rsshub</a>
+                    <a href="https://sms-activate.org/">境外验证码激活</a>
+                    <a href="https://www.meiguodizhi.com/">境外地址生成器</a>
+                    <a href="https://recordscreen.io/">录屏</a>
+                    <a href="https://www.tampermonkey.net/">Tampermonkey</a>
+                    <a href="https://uiverse.io/">开源ui</a>
+                    <a href="https://greasyfork.org/zh-CN/scripts/25718-%E8%A7%A3%E9%99%A4b%E7%AB%99%E5%8C%BA%E5%9F%9F%E9%99%90%E5%88%B6">解除B站区域限制</a>
+                    <a href="https://greasyfork.org/zh-CN/scripts/381682-%E9%9F%B3%E8%A7%86%E9%A2%91%E5%A2%9E%E5%BC%BA%E8%84%9A%E6%9C%AC-%E6%97%A0%E6%9E%81%E8%B0%83%E9%80%9F-%E5%80%8D%E9%80%9F%E5%BF%AB%E5%AD%A6-%E5%BF%AB%E4%B9%90%E5%88%B7%E5%89%A7-%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD-%E7%94%BB%E9%9D%A2%E6%88%AA%E5%9B%BE%E7%AD%89-%E9%80%82%E7%94%A8%E5%A4%A7%E9%83%A8%E5%88%86%E7%BD%91%E7%AB%99">HTML5视频播放器增强脚本</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1nbh_jvnh2FI6zKETbUqW97wOx0Qrlf0l0S-x2daKM9M/edit?pli=1&gid=0#gid=0">图床测评 - Google 表格</a>
+                    <a href="https://immersivetranslate.com/zh-Hans/">沉浸式翻译</a>
+                    <a href="https://scholar.google.com/">谷歌学术搜索</a>
+                    <a href="https://www.runoob.com/">菜鸟教程</a>
+                    <h3 id="database">资料库</h3>
+                    <a href="https://helpx.adobe.com/cn/after-effects/using/keyboard-shortcuts-reference.html">After Effects 中的键盘快捷键</a>
+                    <a href="https://helpx.adobe.com/cn/after-effects/using/expression-examples.html">After Effects 中的表达式示例</a>
+                    <a href="https://helpx.adobe.com/cn/premiere/desktop/get-started/keyboard-shortcuts/default-keyboard-shortcuts.html">Premiere Pro 的键盘快捷键</a>
+                    <a href="https://www.pinterest.com/">Pinterest</a>
+                    <a href="https://www.lookae.com/">剪辑素材</a>
+                    <a href="https://www.pexels.com/">免费图片素材</a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <h3 id="forums">论坛</h3>
+                    <a href="https://www.fandom.com">fandom</a>
+                    <a href="https://blogclan.katecary.co.uk/">blogclan</a>
+                    <a href=""></a>
+                    <h2 id="acgn">二次元</h2>
+                    <h3>下载</h3>
+                    <a href="https://mikanani.me/">蜜柑</a>
+                    <a href="https://nyaa.si/">Nyaa</a>
+                    <a href="https://vcb-s.com/">VCB-Studio</a>
+                    <a href="https://www.comicplan.top/post/comic-4">本地漫画阅读器</a>
+                    <h3>在线</h3>
+                    <a href="https://masiro.me/">真百萌</a>
+                    <a href="https://ani.gamer.com.tw/">巴哈姆特</a>
+                    <a href="https://www.bilinovel.com/">bili轻小说</a>
+                    <a href="https://hanime1.me/">hanime1</a>
+                    <a href="https://anime1.me/">Anime1.me</a>
+                    
+                    <h3>其他</h3>
+                    <a href="https://yuc.wiki/">有c的wiki</a>
+                    <a href="https://sakugabooru.com/">sakugabooru</a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <h3>有趣网站</h3>
+                    <a href="https://anime-character-guessr.netlify.app/singleplayer">二次元猜角色</a>
+                    <a href="https://bgm.tv/magi">MAGI问答</a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <h3>论坛</h3>
+                    <a href="https://bbs.yamibo.com/">百合会</a>
+                    <a href="https://bgm.tv/">bangumi</a>
+                    <a href="https://nga.cn/">nga</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+
+
+    <!-- 右栏 -->
+    <div class="right-bar">
+        <!-- 近期更新 -->
+        <div class="right-bar-1">
+            <span class="bar-title-right">近期更新</span>
+            <ul>
+                <li>
+                    <a href="recomendations.html#index-1">2025年值得一看的TV新作</a>
+                    <span class="small">2025.12.31</span>
+                </li>
+                <li>
+                    <a href="gallery.html#memes">相册 > 无意义memes</a>
+                    <span class="small">2025.12.25</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-6">个人2025年度原画师</a>
+                    <span class="small">2025.12.21</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-5">Some Interpretions on The Catcher in the Rye</a>
+                    <span class="small">2025.12.16</span>
+                </li>
+                <li>
+                    <a href="recomendations.html#inde-2">青春狂想曲</a>
+                    <span class="small">2025.12.11</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="right-bar-2">
+            <div class="src-search-area">
+                <div class="src-search-box">
+                    <div class="src-search-input-group">
+                        <span class="src-search-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <input type="text" id="srcSearchInput" placeholder="搜索资源名称、工具、网站或分类..." autocomplete="off">
+                    </div>
+                    
+                    <div id="srcSearchResults" class="src-results-panel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 目录链接高亮函数
+        function highlightLink(element) {
+            // 移除所有active类
+            document.querySelectorAll('.left-bar-1 a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 给当前点击的链接添加active类
+            element.classList.add('active');
+        }
+        
+        // 根据滚动位置高亮当前阅读的笔记
+        function highlightCurrentNote() {
+            const notes = document.querySelectorAll('.src h3');
+            const links = document.querySelectorAll('.left-bar-1 a');
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const clientHeight = document.documentElement.clientHeight;
+            
+            if (scrollTop + clientHeight >= scrollHeight - 10) {
+                links.forEach(link => link.classList.remove('active'));
+                if (links.length > 0) {
+                    links[links.length - 1].classList.add('active');
+                }
+                return; // 直接返回，不再执行后续逻辑
+            }
+            // ----------------------
+
+            // 找到当前最靠近视口顶部的笔记
+            let currentNoteId = null;
+            let minDistance = Infinity;
+            
+            notes.forEach(note => {
+                const rect = note.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+                
+                if (distance < minDistance && rect.top <= 150) {
+                    minDistance = distance;
+                    currentNoteId = note.id;
+                }
+            });
+            
+            // 更新链接高亮
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentNoteId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 监听滚动事件，高亮当前阅读的笔记
+        window.addEventListener('scroll', highlightCurrentNote);
+        
+        // 页面加载时执行一次高亮
+        document.addEventListener('DOMContentLoaded', highlightCurrentNote);
+
+        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const sInput = document.getElementById('srcSearchInput');
+            const sResults = document.getElementById('srcSearchResults');
+
+            if (!sInput || !sResults) return;
+
+            sInput.addEventListener('input', function() {
+                const val = this.value.trim().toLowerCase();
+                if (!val) {
+                    sResults.style.display = 'none';
+                    return;
+                }
+
+                // 获取 .src 下所有的 a 标签和 h3 标签
+                const links = document.querySelectorAll('.src a');
+                const sections = document.querySelectorAll('.src h3, .src h2');
+                
+                sResults.innerHTML = '';
+                let matchCount = 0;
+
+                // 1. 搜索链接
+                links.forEach(link => {
+                    const text = link.innerText;
+                    const url = link.href;
+                    
+                    if (text && text.toLowerCase().includes(val)) {
+                        matchCount++;
+                        
+                        // 查找这个链接属于哪个标题下的（向上找最近的h3）
+                        let category = "资源";
+                        let prev = link.previousElementSibling;
+                        while (prev) {
+                            if (prev.tagName === 'H3' || prev.tagName === 'H2') {
+                                category = prev.innerText;
+                                break;
+                            }
+                            prev = prev.previousElementSibling;
+                        }
+
+                        const item = document.createElement('div');
+                        item.className = 'src-result-item';
+                        item.innerHTML = `
+                            <span class="src-res-name">${highlightSrcText(text, val)}</span>
+                            <span class="src-res-category">${category}</span>
+                        `;
+
+                        item.addEventListener('click', () => {
+                            // 平滑滚动到具体链接
+                            link.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // 视觉提醒
+                            link.style.outline = '2px solid #3498db';
+                            link.style.background = '#fff9c4';
+                            setTimeout(() => {
+                                link.style.outline = 'none';
+                                link.style.background = 'transparent';
+                            }, 2000);
+
+                            sResults.style.display = 'none';
+                            sInput.value = text;
+                        });
+                        sResults.appendChild(item);
+                    }
+                });
+
+                // 2. 搜索分类标题 (h3/h2)
+                sections.forEach(sec => {
+                    if (sec.innerText.toLowerCase().includes(val)) {
+                        // 如果标题匹配但还没被加入结果（简单处理）
+                        const item = document.createElement('div');
+                        item.className = 'src-result-item';
+                        item.innerHTML = `
+                            <span class="src-res-name">📂 分类：${highlightSrcText(sec.innerText, val)}</span>
+                            <span class="src-res-category">跳转到分类</span>
+                        `;
+                        item.addEventListener('click', () => {
+                            sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            sResults.style.display = 'none';
+                        });
+                        sResults.prepend(item); // 分类排在前面
+                    }
+                });
+
+                if (matchCount > 0 || sResults.children.length > 0) {
+                    const bar = document.createElement('div');
+                    bar.className = 'src-stats-bar';
+                    bar.innerText = `找到相关资源/分类`;
+                    sResults.insertBefore(bar, sResults.firstChild);
+                    sResults.style.display = 'block';
+                } else {
+                    sResults.innerHTML = '<div class="src-no-match">未找到相关资源</div>';
+                    sResults.style.display = 'block';
+                }
+            });
+
+            function highlightSrcText(text, key) {
+                const re = new RegExp(`(${key})`, 'gi');
+                return text.replace(re, '<span class="src-highlight">$1</span>');
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.src-search-box')) {
+                    sResults.style.display = 'none';
+                }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

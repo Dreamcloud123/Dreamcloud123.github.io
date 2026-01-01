@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推荐目录</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="columns.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <ul class="nav">
+        <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
+        <li><a href="main.html" class="title">首页</a>
+        <li><a href="essay.html" class="title">随笔</a>
+            <!-- <ul class="dropdown">
+                <li><a href="#">觅食报告</a></li>
+                <li><a href="citybike.html">citybike记录</a></li>
+                <li><a href="book.html">书影音推荐</a></li>
+                <li><a href="#">小作文们</a></li>
+            </ul> -->
+        </li>
+        <li><a href="gallery.html" class="title">相册</a></li>
+        <li><a href="recomendations.html" class="title">目录</a></li>
+        <!-- <li>
+            <a href="#" class="title">语言</a>
+            <ul class="dropdown">
+                <li><a href="#">中文</a></li><br>
+                <li><a href="#">English</a></li>
+            </ul>
+        </li> -->
+    </ul>
+
+    <!-- 公告板 -->
+    <div id="announcementOverlay" class="overlay">
+        <div class="board-wrapper">
+            <span id="closeBoard" class="close-btn-outer">&times;</span>
+            
+            <div class="announcement-board">
+                <div class="board-header">
+                    <div class="note-title">公告 / Announcement</div>
+                </div>
+                <div class="board-content">
+                    <p>写这个blog已经写得人精神状态濒临崩溃了<img src="./m/bocchi seizures.GIF" alt="抽搐.jpg"></p>
+                    <p>其实本来有很多<span class="cross">伟大</span>的设想但都没有来得及做，也有很多有趣的东西没来得及放上去，还有一些很明显的bug。目前先用github静态部署，之后可能会考虑搞个服务器，但也算是在自己设的ddl（2026.1.1）前完成了。</p>
+                    <p>在此特别鸣谢我的四位非人类老师（）能遇见你们真好</p>
+                    <p>会努力更新的，所以，欢迎常来看看。忘了在哪看到过一句话：</p>
+                    <p class="quotes">“人生在你死之前都处于未完成状态。”</p>
+                    <p>我想这个小网站也是。</p>
+                </div>
+                <div class="note-info">
+                    <span class="note-tag">Welcome</span>
+                    <span class="note-tag">Guide</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('announcementOverlay');
+            const firstVisitLink = document.getElementById('firstVisit'); // 确保你的导航栏“初次来访”ID正确
+            const closeBtn = document.getElementById('closeBoard');
+
+            // 打开公告板
+            if (firstVisitLink) {
+                firstVisitLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 禁止页面滚动
+                });
+            }
+
+            // 点击叉号关闭
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // 点击背景变暗区域关闭
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+    <!-- 左栏 - 目录 -->
+    <div class="left-bar-1">
+        <ul><span class="bar-title">目录</span>
+            <li><a href="#index-2" onclick="highlightLink(this)">青春狂想曲</a></li>
+            <li><a href="#index-1" onclick="highlightLink(this)">2025年值得一看的TV新作</a></li>
+        </ul>
+    </div>  
+    
+    <!-- 正文 -->
+    <div class="directory-container">
+        <div class="directory" id="index-2">
+            <div class="directory-header">
+                <div class="directory-title">
+                    <span>青春狂想曲</span>
+                </div>
+                <div class="directory-subtitle">
+                    <div class="directory-tags">
+                        <a href="#" class="note-tag">青春</a>
+                        <a href="#" class="note-tag">书影音</a>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-icon"><i class="fas fa-book"></i></span>
+                            <span class="stat-count">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon"><i class="fas fa-tv"></i></span>
+                            <span class="stat-count">4</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon"><i class="fas fa-music"></i></span>
+                            <span class="stat-count">1</span>
+                        </div>
+                    </div>    
+                </div>    
+            </div>
+            
+            <div class="recommendation">还记得高一第一周的每周阅读上的一句话：
+                <span class="quote quote-left">"</span>
+                <p class="recommendation-text">青春该怎么过? 不计后果地过。</p>
+                <span class="quote quote-right">"</span>
+            </div>
+
+            <div class="info">有关青春期的文艺作品推荐，适合在12-18岁品鉴。</div>
+            
+            <div class="directory-footer">
+                <div class="creation-date">
+                    创建时间：2025-10-10 上次更新时间：2025-12-19
+                </div>
+                <button class="expand-btn" class="expandBtn">
+                    展开目录
+                    <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
+                </button>
+            </div>
+            
+            <div class="directory-content" class="directoryContent">
+                <ul class="directory-list">
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://book.douban.com/subject/26995850/" class="item-name">雨季不再来</a>
+                            <span class="item-type"><i class="fas fa-book"></i> 书籍</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">'当三毛还是二毛的时候'——青涩、稚气未脱却真实地戳入人心的青春记录。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/822" class="item-name">FLCL</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">致我们混沌无涯又放荡不羁的青春幻影。品鉴flcl的时候就彻底放空大脑吧！Don't try to understand it. Feel it.</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/8474" class="item-name">放浪息子</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">以文艺清新的氛围刻画了青春期对性别认识的探索，不是一味地回避或过激的反叛，而是以成长的本面，迷茫、困惑和一些小小的欢欣雀跃。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/485" class="item-name">凉宫春日的忧郁</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">比起麻木空虚的日常，我更愿意选择生活在会发生一连串非日常事件的有趣的世界中——这不也是一种存在主义？06版的乱序是经典。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/93739" class="item-name">乒乓</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">我们用青春在乒乓的赛场上称量‘天赋’与‘努力’的价值，那称重的天平消失后呢？</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://www.youtube.com/watch?v=F33uCg-3XiY" class="item-name">teenage dream - Olivia Rodrigo</a>
+                            <span class="item-type"><i class="fas fa-music"></i> 音乐</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text"><span class="important">This</span> is Gen Z's teenage dream. We couldn't be daydreamers popping our heads up into the cloud, bathing california's sunshine. We're just a generation navigating the ruins of old edifices, disorientated.</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="directory" id="index-1">
+            <div class="directory-header">
+                <div class="directory-title">
+                    <span>2025年值得一看的TV新作</span>
+                </div>
+                <div class="directory-subtitle">
+                    <div class="directory-tags">
+                        <a href="#" class="note-tag">动画</a>
+                        <a href="#" class="note-tag">2025年终盘点</a>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-icon"><i class="fas fa-tv"></i></span>
+                            <span class="stat-count">6</span>
+                        </div>
+                    </div>    
+                </div>    
+            </div>
+
+            <div class="info"><p>今年是新番好像表现一般，已经到了怀念21-23年的年龄了吗（悲）<br>注：只统计tv新作动画不计剧场版和续作；可能会再补充</p>
+            </div>
+            
+            <div class="directory-footer">
+                <div class="creation-date">
+                    创建时间：2025-12-31 上次更新时间：2025-12-31
+                </div>
+                <button class="expand-btn" class="expand-btn">
+                    展开目录
+                    <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
+                </button>
+            </div>
+            
+            <div class="directory-content" class="directoryContent">
+                <ul class="directory-list">
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/531159" class="item-name">时光流逝，饭菜依旧美味</a>
+                            <span class="item-type"><i class="fas fa-tv"></i>动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">ごはんと太陽　ふと思う　普通に生きてるな<br>治愈人的不是人生的大道理，而是生活本味的欢喜。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/511207" class="item-name">前桥魔女</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">在偶像的范式中开出“新意”之花。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/514358" class="item-name">CITY THE ANIMATION</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">-夏天要结束了啊。<br>-你找到有趣的事了吗？<br>-我想过了，其实每天都挺有趣的啊。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/524707" class="item-name">我们不可能成为恋人！绝对不行。 (※似乎可行？)</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">紫阳花大天使！！！！</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/491569" class="item-name">忍者与杀手二人组的日常生活</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">邪典的剧情+脑洞大开的演出=电波系佳作。<br>私心最偏爱的一部，宫本幸裕的改编能力稳定得令人安心。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                    <li class="directory-item">
+                        <div class="item-header">
+                            <a href="https://bgm.tv/subject/509986" class="item-name">末日后酒店</a>
+                            <span class="item-type"><i class="fas fa-tv"></i> 动画</span>
+                        </div>
+                        <div class="item-recommendation">
+                            <span class="item-quote item-quote-left">"</span>
+                            <p class="item-recommendation-text">给时光以生命，给岁月以文明。</p>
+                            <span class="item-quote item-quote-right">"</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取页面中所有的展开按钮
+        const expandBtns = document.querySelectorAll('.expand-btn');
+
+        expandBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 找到当前按钮所在的那个 .directory 父元素
+                const parentDirectory = this.closest('.directory');
+                const isExpanded = parentDirectory.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    parentDirectory.classList.remove('expanded');
+                    this.innerHTML = '展开目录 <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>';
+                } else {
+                    parentDirectory.classList.add('expanded');
+                    this.innerHTML = '收起目录 <span class="expand-icon"><i class="fas fa-chevron-up"></i></span>';
+                }
+            });
+        });
+    </script>
+
+        <!-- 右栏 -->
+    <div class="right-bar">
+        <!-- 近期更新 -->
+        <div class="right-bar-1">
+            <span class="bar-title-right">近期更新</span>
+            <ul>
+                <li>
+                    <a href="recomendations.html#index-1">2025年值得一看的TV新作</a>
+                    <span class="small">2025.12.31</span>
+                </li>
+                <li>
+                    <a href="gallery.html#memes">相册 > 无意义memes</a>
+                    <span class="small">2025.12.25</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-6">个人2025年度原画师</a>
+                    <span class="small">2025.12.21</span>
+                </li>
+                <li>
+                    <a href="essay.html#note-5">Some Interpretions on The Catcher in the Rye</a>
+                    <span class="small">2025.12.16</span>
+                </li>
+                <li>
+                    <a href="recomendations.html#inde-2">青春狂想曲</a>
+                    <span class="small">2025.12.11</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="right-bar-2">
+            <div class="dir-search-container">
+                <div class="dir-search-box">
+                    <div class="dir-search-input-wrapper">
+                        <span class="dir-search-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <input type="text" id="dirSearchInput" placeholder="在目录中搜索作品、书籍或动画..." autocomplete="off">
+                    </div>
+                    
+                    <div id="dirSearchResults" class="dir-results-panel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const dInput = document.getElementById('dirSearchInput');
+            const dResults = document.getElementById('dirSearchResults');
+
+            if (!dInput || !dResults) return;
+
+            dInput.addEventListener('input', function() {
+                const keyword = this.value.trim().toLowerCase();
+                if (!keyword) {
+                    dResults.style.display = 'none';
+                    return;
+                }
+
+                const items = document.querySelectorAll('.directory-item');
+                dResults.innerHTML = '';
+                let matchCount = 0;
+
+                items.forEach(item => {
+                    const nameNode = item.querySelector('.item-name');
+                    const descNode = item.querySelector('.item-recommendation-text');
+                    const name = nameNode ? nameNode.innerText : "";
+                    const desc = descNode ? descNode.innerText : "";
+
+                    if (name.toLowerCase().includes(keyword) || desc.toLowerCase().includes(keyword)) {
+                        matchCount++;
+                        const entry = document.createElement('div');
+                        entry.className = 'dir-result-entry';
+                        entry.innerHTML = `
+                            <span class="dir-entry-title">${highlightDirText(name, keyword)}</span>
+                            <span class="dir-entry-desc">${desc}</span>
+                        `;
+
+                        // 修改后的点击逻辑
+                        entry.addEventListener('click', () => {
+                            const parentDir = item.closest('.directory');
+                            const content = parentDir.querySelector('.directory-content');
+                            const expandBtn = parentDir.querySelector('.expand-btn');
+                            
+                            // 1. 展开目录的核心逻辑
+                            // 检查 content 是否已经展开（通过判断高度或 display）
+                            const isCollapsed = window.getComputedStyle(content).display === 'none' || content.offsetHeight === 0;
+                            
+                            if (isCollapsed) {
+                                // 模拟用户点击展开按钮，这样可以触发你原本所有的 CSS 过渡动画和文字变化
+                                if (expandBtn) {
+                                    expandBtn.click();
+                                } else {
+                                    // 如果没有按钮，则强制显示
+                                    content.style.display = 'block';
+                                }
+                            }
+
+                            // 2. 滚动到目标位置
+                            // 使用 setTimeout 给 CSS 展开动画留一点计算时间
+                            setTimeout(() => {
+                                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                
+                                // 3. 视觉高亮提醒
+                                item.style.transition = 'background-color 0.4s ease';
+                                item.style.backgroundColor = '#fff9c4';
+                                setTimeout(() => {
+                                    item.style.backgroundColor = 'transparent';
+                                }, 2000);
+                            }, 300); // 延迟300ms确保展开动作已启动
+
+                            dResults.style.display = 'none';
+                            dInput.value = name; // 将输入框设为选中的标题
+                        });
+                        dResults.appendChild(entry);
+                    }
+                });
+
+                if (matchCount > 0) {
+                    const header = document.createElement('div');
+                    header.className = 'dir-stats-header';
+                    header.innerText = `找到 ${matchCount} 个相关推荐`;
+                    dResults.insertBefore(header, dResults.firstChild);
+                    dResults.style.display = 'block';
+                } else {
+                    dResults.innerHTML = '<div class="dir-no-match">未找到相关内容</div>';
+                    dResults.style.display = 'block';
+                }
+            });
+
+            function highlightDirText(text, key) {
+                const re = new RegExp(`(${key})`, 'gi');
+                return text.replace(re, '<span class="dir-highlight">$1</span>');
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dir-search-box')) {
+                    dResults.style.display = 'none';
+                }
+            });
+        });
+    })();
+    </script>
+    
+    <script>
+        // 目录链接高亮函数
+        function highlightLink(element) {
+            // 移除所有active类
+            document.querySelectorAll('.left-bar-1 a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 给当前点击的链接添加active类
+            element.classList.add('active');
+        }
+        
+        // 根据滚动位置高亮当前阅读的笔记
+        function highlightCurrentNote() {
+            const notes = document.querySelectorAll('.directory');
+            const links = document.querySelectorAll('.left-bar-1 a');
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const clientHeight = document.documentElement.clientHeight;
+            
+            if (scrollTop + clientHeight >= scrollHeight - 10) {
+                links.forEach(link => link.classList.remove('active'));
+                if (links.length > 0) {
+                    links[links.length - 1].classList.add('active');
+                }
+                return; // 直接返回，不再执行后续逻辑
+            }
+            // ----------------------
+            
+            // 找到当前最靠近视口顶部的笔记
+            let currentNoteId = null;
+            let minDistance = Infinity;
+            
+            notes.forEach(note => {
+                const rect = note.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+                
+                if (distance < minDistance && rect.top <= 150) {
+                    minDistance = distance;
+                    currentNoteId = note.id;
+                }
+            });
+            
+            // 更新链接高亮
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentNoteId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 监听滚动事件，高亮当前阅读的笔记
+        window.addEventListener('scroll', highlightCurrentNote);
+        
+        // 页面加载时执行一次高亮
+        document.addEventListener('DOMContentLoaded', highlightCurrentNote);
+    </script>
+</body>
+</html>
