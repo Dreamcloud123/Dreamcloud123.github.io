@@ -90,6 +90,11 @@
     <!-- 左栏 - 目录 -->
     <div class="left-bar">
         <ul><span class="bar-title">目录</span>
+            <li><span class="column-date">2026.1</span>
+                <ul>
+                    <li><a href="#note-7" onclick="highlightLink(this)">好用的ae插件</a></li>
+                </ul>
+            </li>
             <li><span class="column-date">2025.12</span>
                 <ul>
                     <li><a href="#note-6" onclick="highlightLink(this)">个人2025年度原画师</a></li>
@@ -111,7 +116,7 @@
     
     <!-- 正文 -->
     <div class="note-container">
-        <!-- <div class="note">
+        <!-- <div class="note" id="note-">
             <div class="note-header">
                 <div class="note-title">标题</div>
                 <div class="note-info">
@@ -128,7 +133,39 @@
             <div class="note-content">
             <p>文段</p>
             </div> 
+            <div class="note-photo-container">
+                <img src=>
+            </div>
         </div> -->
+
+        <div class="note" id="note-7">
+            <div class="note-header">
+                <div class="note-title">好用的ae插件</div>
+                <div class="note-info">
+                    <div class="note-date">
+                        <span class="date-icon"></span>
+                        <span>2026年1月7日</span>
+                    </div>
+                    <div class="note-mood">心情</div>
+                    <div class="note-tags">
+                        <a href="#" class="note-tag">好物分享（？）</a>
+                        <a href="#" class="note-tag">剪辑</a>
+                        <a href="#" class="note-tag">插件</a>
+                    </div>
+                </div>
+            </div>
+            <div class="note-content">
+            <p><a href="https://aescripts.com/after-effects/automation/flow/?srsltid=AfmBOooC2YSdKhSNh-yuBQlKKU4Kf713Uu0fbSzSf2UpimfP3iBq1vyg">Flow</a>，一款拯救拉曲线苦手的好插件。</p>
+            <p>将ae在时间轴面板中显示的图标编辑器单独开了一个面板，很好解决了缩放不准导致无法看全曲线的问题（如p1）。</p>
+            <p>还有默认的曲线方程可以直接应用，完美解决了拉曲线苦手（e.g.我）拉不出自己想要的效果的问题。选中关键帧，拉曲线，点击应用就行。还可以存预设，如缓入缓出（如p2）。</p>
+            <p>应该算是ae庞杂的插件系统中功能简单且很好上手的一个了，而且占内存小所以很好带，可惜近期才发现。</p>
+            <p>下次有时间吐槽一下bcc和particular这两个天天把我ae搞崩的罪魁祸首。</p>
+            </div> 
+            <div class="note-photo-container">
+                <img src="https://files.catbox.moe/6gb6c8.png">
+                <img src="https://files.catbox.moe/5cbxdk.png">
+            </div>
+        </div>
 
         <div class="note" id="note-6">
             <div class="note-header">
@@ -292,6 +329,10 @@
             <span class="bar-title-right">近期更新</span>
             <ul>
                 <li>
+                    <a href="essay.html#note-7">好用的ae插件</a>
+                    <span class="small">2026.1.7</span>
+                </li>
+                <li>
                     <a href="recomendations.html#index-1">2025年值得一看的TV新作</a>
                     <span class="small">2025.12.31</span>
                 </li>
@@ -306,10 +347,6 @@
                 <li>
                     <a href="essay.html#note-5">Some Interpretions on The Catcher in the Rye</a>
                     <span class="small">2025.12.16</span>
-                </li>
-                <li>
-                    <a href="recomendations.html#inde-2">青春狂想曲</a>
-                    <span class="small">2025.12.11</span>
                 </li>
             </ul>
         </div>
