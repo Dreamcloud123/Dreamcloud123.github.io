@@ -101,14 +101,14 @@ a:hover {
 .update {
     position: absolute;
     top: 535px;
-    right: 563px;
+    right: 558px;
     background-color: #fbf7f1;
     border-radius: 30px;
     border: 2px solid #584738;
-    padding: 25px 50px;
+    padding: 20px 10px 25px 50px;
     font-size: 20px; 
     line-height: 1.6;
-    max-width: 200px;
+    max-width: 300px;
 }
 
 .update > li a {
