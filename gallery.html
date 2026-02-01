@@ -965,33 +965,60 @@
                         <div class="text"><span class="post-date"></span>哲学Memes</div>
                     </div>
                 </div>
-
-                
-                
             </div>
 
             <div class="row">
-                
+                <div class="left-column-4">
+                    <div class="post">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./meme/30.jpg"></div>
+                        </div>
+                        <div class="text"><span class="post-date">论坛体meme</span></div>
+                    </div>
+                </div>
 
-                
+                <div class="right-column">
+                    <div class="post">
+                        <div class="photo">
+                            <div class="slides-wrapper">
+                                <div class="slide"><img src="./meme/31.jpg"></div>
+                                <div class="slide"><img src="./meme/32.jpg"></div>
+                                <div class="slide"><img src="./meme/33.jpg"></div>
+                                <div class="slide"><img src="./meme/34.jpg"></div>
+                                <div class="slide"><img src="./meme/35.jpg"></div>
+                                <div class="slide"><img src="./meme/36.jpg"></div>
+                                <div class="slide"><img src="./meme/37.jpg"></div>
+                                <div class="slide"><img src="./meme/38.jpg"></div>
+                                <div class="slide"><img src="./meme/39.jpg"></div>
+                                <div class="slide"><img src="./meme/40.jpg"></div>
+                            </div>
+                            <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                            <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" data-slide="0"></span>
+                                <span class="carousel-indicator" data-slide="1"></span>
+                                <span class="carousel-indicator" data-slide="2"></span>
+                                <span class="carousel-indicator" data-slide="3"></span>
+                                <span class="carousel-indicator" data-slide="4"></span>
+                                <span class="carousel-indicator" data-slide="5"></span>
+                                <span class="carousel-indicator" data-slide="6"></span>
+                                <span class="carousel-indicator" data-slide="7"></span>
+                                <span class="carousel-indicator" data-slide="8"></span>
+                                <span class="carousel-indicator" data-slide="9"></span>
+                            </div>
+                        </div>
+                        <div class="text"><span class="post-date"></span>哲学Memes#2</div>
+                    </div>
+                </div>
             </div>
-
-            <div class="row">
-                
-
-                
-            </div>
-
-            
         </div>
     </div>
     
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. 选中所有的 post 容器
-        const posts = document.querySelectorAll('.post');
+        // 1. 同时选中 .post 和 .post-3，确保新旧结构都能被搜到
+        const posts = document.querySelectorAll('.post, .post-3');
 
-        // 2. 遍历每一个 post，为其独立初始化逻辑
         posts.forEach((post) => {
             const wrapper = post.querySelector('.slides-wrapper');
             const slides = post.querySelectorAll('.slide');
@@ -999,35 +1026,37 @@
             const nextBtn = post.querySelector('.carousel-next');
             const indicators = post.querySelectorAll('.carousel-indicator');
 
+            // 【关键修复点】：容错判断
+            // 如果这个 post 容器里缺了必要的元素，直接跳过处理，不让代码崩溃
+            if (!wrapper || !prevBtn || !nextBtn) {
+                console.warn('某个帖子缺少轮播组件，已跳过：', post);
+                return; 
+            }
+
             let currentIndex = 0;
             const totalSlides = slides.length;
 
-            // 如果该 post 内没有图片，跳过
             if (totalSlides === 0) return;
 
             function updateCarousel() {
-                // 移动当前 post 下的图片容器
                 wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-                // 更新当前 post 下的指示点
                 indicators.forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentIndex);
                 });
             }
 
-            // 下一张按钮（仅控制当前 post）
-            nextBtn.addEventListener('click', () => {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // 防止某些浏览器的默认行为
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateCarousel();
             });
 
-            // 上一张按钮（仅控制当前 post）
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarousel();
             });
 
-            // 点击指示点跳转（仅控制当前 post）
             indicators.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentIndex = index;
@@ -1035,7 +1064,7 @@
                 });
             });
         });
-    });
+        });
     </script>
 
     <!-- 右栏 -->
@@ -1078,7 +1107,7 @@
                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                             </svg>
                         </span>
-                        <input type="text" id="gallerySearchInput" placeholder="搜索画廊中的地点、足迹或描述..." autocomplete="off">
+                        <input type="text" id="gallerySearchInput" placeholder="搜索相册中的地点、足迹或描述..." autocomplete="off">
                     </div>
                     
                     <div id="gallerySearchResults" class="g-results-panel"></div>
