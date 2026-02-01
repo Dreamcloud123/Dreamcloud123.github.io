@@ -1135,6 +1135,23 @@ html {
     width: 68%;
 }
 
+.left-column-4 {
+    width: auto;   
+}
+
+.left-column-4 > .post > .slides-wrapper > .slide >img {
+    object-fit: cover;
+    width: 310px;
+}
+
+.right-column-4 > .post {
+    margin-top: 25px;
+}
+
+.right-column-4 > .post:first-child{
+    margin-top: 0px;
+}
+
 .photo {
     height: auto;
     position: relative;
