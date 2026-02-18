@@ -1020,8 +1020,8 @@ html {
 
 .note-photo-container img {
     object-fit: contain;
-    max-width: 150px;
-    margin-right: 5px;
+    max-width: 300px;
+    margin-right: 10px;
 }
 
 .note-info {
