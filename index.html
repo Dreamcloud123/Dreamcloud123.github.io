@@ -118,7 +118,7 @@
      <ul id="button">
         <li>点我开启工具箱</li>
         <li>点我随机跳转页面</li>
-        <li class="work-name">待开发</li>
+        <li>点我放烟花</li>
      </ul>
 
      <img src="./m/button-red1.png" id="button_red1">
@@ -150,6 +150,7 @@
 
         const button_red = document.getElementById('button_red');
         const toolkit = "src collection.html";
+        const fireworks = "fireworks.html";
 
         button_red.addEventListener('click', function(){
             this.classList.add('fade-out');
@@ -177,6 +178,7 @@
 
             setTimeout(() => {
                 this.classList.remove('fade-out');
+                window.location.href = fireworks;
             }, 1000);
         });
     </script>
