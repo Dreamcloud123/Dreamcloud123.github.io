@@ -1014,14 +1014,26 @@ html {
 
 .note-photo-container {
     display: flex;
-    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    align-items: stretch;
     margin-top: 10px;
 }
 
+.note-photo-container p:first-child {
+    margin-top: 0;
+}
+
 .note-photo-container img {
-    object-fit: contain;
+    object-fit: cover;
     max-width: 300px;
     margin-right: 10px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column; /* 让左侧的两张图片纵向排列 */
+    gap: 10px;               /* 占用一定的比例空间 */
 }
 
 .note-info {
