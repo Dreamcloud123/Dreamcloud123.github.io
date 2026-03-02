@@ -361,6 +361,10 @@ body {
     position: fixed;
 }
 
+.left-bar > ul > li > a {
+    text-decoration: none;
+}
+
 .right-bar {
     position: fixed;
     right: 30px;
