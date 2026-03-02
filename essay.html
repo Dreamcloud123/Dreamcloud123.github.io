@@ -1052,6 +1052,7 @@
         </div>
     </div>
 
+    <!-- 目录高亮 -->
     <script>
         // 目录链接高亮函数
         function highlightLink(element) {
@@ -1079,7 +1080,6 @@
                 }
                 return; // 直接返回，不再执行后续逻辑
             }
-            // ----------------------
             
             // 找到当前最靠近视口顶部的笔记
             let currentNoteId = null;
@@ -1109,7 +1109,10 @@
         
         // 页面加载时执行一次高亮
         document.addEventListener('DOMContentLoaded', highlightCurrentNote);
-
+    </script>
+    
+    <!-- 搜索 -->
+    <script>
         (function() {
         document.addEventListener('DOMContentLoaded', function() {
             const nInput = document.getElementById('noteSearchInput');
