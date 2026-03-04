@@ -1034,6 +1034,17 @@ html {
     margin-right: 10px;
 }
 
+.note-photo-container > .photo {
+    width: 450px;
+    background-color: #ffffffa1;
+}
+
+.note-photo-container > .photo > .slides-wrapper > .slide > img {
+    object-fit: contain;
+    max-width: 400px;
+    margin-left: 25px;
+}
+
 .left-column {
     display: flex;
     flex-direction: column; /* 让左侧的两张图片纵向排列 */

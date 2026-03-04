@@ -90,6 +90,11 @@
     <!-- 左栏 - 目录 -->
     <div class="left-bar">
         <ul><span class="bar-title">目录</span>
+            <li><span class="column-date">2026.3</span>
+                <ul>
+                    <li><a href="#note-18" onclick="highlightLink(this)">March</a></li>
+                </ul>
+            </li>
             <li><span class="column-date">2026.2</span>
                 <ul>
                     <li><a href="#note-17" onclick="highlightLink(this)">放假</a></li>
@@ -494,28 +499,106 @@
             </div>
         </div> -->
 
+        <!-- 图片轮播 -->
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const posts = document.querySelectorAll('.note-photo-container');
 
-        <!-- <div class="note" id="note-">
+            posts.forEach((post) => {
+                const wrapper = post.querySelector('.slides-wrapper');
+                const slides = post.querySelectorAll('.slide');
+                const prevBtn = post.querySelector('.carousel-prev');
+                const nextBtn = post.querySelector('.carousel-next');
+                const indicators = post.querySelectorAll('.carousel-indicator');
+
+                if (!wrapper || !prevBtn || !nextBtn) {
+                    console.warn('某个帖子缺少轮播组件，已跳过：', post);
+                    return; 
+                }
+
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+
+                if (totalSlides === 0) return;
+
+                function updateCarousel() {
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    indicators.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // 防止某些浏览器的默认行为
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateCarousel();
+                });
+
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                });
+
+                indicators.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+            });
+            });
+        </script>
+        
+        <div class="note" id="note-18">
             <div class="note-header">
-                <div class="note-title">标题</div>
+                <div class="note-title">March</div>
                 <div class="note-info">
                     <div class="note-date">
                         <span class="date-icon"></span>
-                        <span>日期</span>
+                        <span>2026年3月4日</span>
                     </div>
-                    <div class="note-mood">心情</div>
+                    <div class="note-mood"></div>
                     <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
+                        <a href="#" class="note-tag">碎碎念</a>
+                        <a href="#" class="note-tag">读书</a>
                     </div>
                 </div>
             </div>
             <div class="note-content">
-            <p></p>
+            <p>It felt like ages since I've last edited this blog, but it turns out that I've recently edidted it just two days ago. I don't know why time flow by so slow. It's like waking up and embracing another day of "not knowing what to do" and just end up reading, 
+                'cause you don't really want to do anything more brain-comsuming than absorbing words one-sidedly. It's not that I can't do any work physically. I can optimize this little blog by adding an eventlistener on the date to prevent from mistaking by manually 
+                typing it every time I update something, or I could do some vidoe editing, play with ae, basically, or I could go study, but it's just that I don't have the mood to do any of this. Math is cool, but chemistry sucks.
+                I'm not suppose to be saying that. It'll only makes me more unmotivated to finish my chemistry studying plans, but the truth is that I do feel this way.
+            </p>
+            <p>Okay, so now I think I can got on going with that I'm reading. After finishing <a href="essay.html#note-15">t&t&t</a>, I've read 7 more books. The most recent one is <span class="work-name">Turtles All the Way Down</span> by John Green. Yep, another John Green book after <span class="work-name">The Fault in Our Stars</span>.
+                It's personally to say but I like this book better since it's not that imaginative about teengage romances but also adequately <span class="important">romantic</span>. 
+                And SPOILERS ALERT, not every YA novel ends with the protagonists in love with each other. What fascinates me most about JG's stories is how he ampliflies a common flaw of humanity (or to say specifically, puberty) into some kind of disease and constrcuts the 
+                whole plot revolving around it. That specific cognition or apprehension or whatever weird imagination we had when we're adolescents is collective memory and somehow resonates with <span class="important">every</span> reader. 
+                It's like having someone peering into the hideous corner of our mind and digging out all those crazy thoughts and exposing it into the sunlight. That feeling of being understood consoles us when we struggle to be in line with the others in a society that limitates individuality and advocates for unformity. 
+            </p>
+            <p>As usual, comments-while-reading below.</p>
             </div> 
             <div class="note-photo-container">
-                <img src=>
+                <div class="photo">
+                    <div class="slides-wrapper">
+                        <div class="slide"><img src="./essay/cwr1.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr2.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr3.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr4.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr5.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr6.jpg"></div>
+                        <div class="slide"><img src="./essay/cwr7.jpg"></div>
+                    </div>
+                    <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                    <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <div class="carousel-indicators">
+                        <span class="carousel-indicator active" data-slide="0"></span>
+                        <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6">
+                    </div>
+                </div>
             </div>
-        </div> -->
+        </div>
 
 
         <div class="note" id="note-17">
@@ -1010,6 +1093,10 @@
             <span class="bar-title-right">近期更新</span>
             <ul>
                 <li>
+                    <a href="essay.html#note-18">March</a>
+                    <span class="small">2026.3.4</span>
+                </li>
+                <li>
                     <a href="gallery.html#travel-shanghai">相册>旅游>上海</a>
                     <span class="small">2026.3.2</span>
                 </li>
@@ -1024,10 +1111,6 @@
                 <li>
                     <a href="essay.html#note-15">Indulged in Reading</a>
                     <span class="small">2026.2.8</span>
-                </li>
-                <li>
-                    <a href="essay.html#note-14">书，你在掠夺我的小珍珠</a>
-                    <span class="small">2026.2.2</span>
                 </li>
             </ul>
         </div>
