@@ -1688,3 +1688,76 @@ html {
         top: -35px !important;
     }
 }
+
+/* --- 首页手机端专项适配 --- */
+@media (max-width: 768px) {
+    /* 1. 背景色块调整：改为固定高度或随内容撑开 */
+    .background {
+        position: relative !important;
+        top: 80px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 200px;
+        opacity: 0.4; /* 稍微调淡，不干扰文字 */
+    }
+
+    /* 2. Logo 居中并缩小 */
+    .logo {
+        position: relative !important;
+        top: 20px !important;
+        right: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    .logo img {
+        max-width: 60% !important; /* 防止猫头太大占满屏 */
+        height: auto !important;
+    }
+
+    /* 3. 对话框 (.nar) 和 更新栏 (.update) 垂直排列 */
+    .nar, .update {
+        position: relative !important;
+        top: 40px !important;
+        right: 0 !important;
+        margin: 0 auto 20px !important; /* 居中并增加下边距 */
+        width: 85% !important; /* 宽度适配手机 */
+        box-sizing: border-box !important;
+        padding: 20px !important;
+        float: none !important;
+    }
+
+    /* 4. 底部按钮组适配 */
+    #button {
+        position: relative !important;
+        top: 60px !important;
+        right: 0 !important;
+        text-align: center !important;
+        width: 100% !important;
+        line-height: 40px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 5. 三个彩色按钮的排列优化 */
+    /* 我们将原本重叠的按钮设为行内块，让它们并排或整齐排列 */
+    #button_red, #button_green, #button_blue,
+    #button_red1, #button_green1, #button_blue1 {
+        position: relative !important;
+        display: inline-block !important;
+        top: 0 !important;
+        right: 0 !important;
+        margin: 10px 15px !important; /* 给按钮之间留点空隙 */
+        width: 40px !important; /* 手机上稍微缩小一点 */
+    }
+
+    /* 6. 特殊：猫咪位置调整 */
+    #cat {
+        position: relative !important;
+        left: 0 !important;
+        display: block !important;
+        margin: 20px auto !important;
+        max-width: 100px !important;
+    }
+}
