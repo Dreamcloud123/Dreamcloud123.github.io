@@ -7,126 +7,146 @@
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <ul class="nav">
-        <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
-        <li><a href="index.html" class="title">首页</a>
-        <li><a href="essay.html" class="title">随笔</a>
-            <!-- <ul class="dropdown">
-                <li><a href="#">觅食报告</a></li>
-                <li><a href="citybike.html">citybike记录</a></li>
-                <li><a href="book.html">书影音推荐</a></li>
-                <li><a href="#">小作文们</a></li>
-            </ul> -->
-        </li>
-        <li><a href="gallery.html" class="title">相册</a></li>
-        <li><a href="recomendations.html" class="title">目录</a></li>
-        <!-- <li>
-            <a href="#" class="title">语言</a>
-            <ul class="dropdown">
-                <li><a href="#">中文</a></li><br>
-                <li><a href="#">English</a></li>
-            </ul>
-        </li> -->
-    </ul>
+    <div class="main">
+        <!-- 导航栏 -->
+        <ul class="nav">
+            <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
+            <li><a href="index.html" class="title">首页</a>
+            <li><a href="essay.html" class="title">随笔</a>
+                <!-- <ul class="dropdown">
+                    <li><a href="#">觅食报告</a></li>
+                    <li><a href="citybike.html">citybike记录</a></li>
+                    <li><a href="book.html">书影音推荐</a></li>
+                    <li><a href="#">小作文们</a></li>
+                </ul> -->
+            </li>
+            <li><a href="gallery.html" class="title">相册</a></li>
+            <li><a href="recomendations.html" class="title">目录</a></li>
+            <!-- <li>
+                <a href="#" class="title">语言</a>
+                <ul class="dropdown">
+                    <li><a href="#">中文</a></li><br>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </li> -->
+        </ul>
 
-    <!-- 公告板 -->
-    <div id="announcementOverlay" class="overlay">
-        <div class="board-wrapper">
-            <span id="closeBoard" class="close-btn-outer">&times;</span>
-            
-            <div class="announcement-board">
-                <div class="board-header">
-                    <div class="note-title">公告 / Announcement</div>
+        <!-- 公告板 -->
+        <div id="announcementOverlay" class="overlay">
+            <div class="board-wrapper">
+                <span id="closeBoard" class="close-btn-outer">&times;</span>
+                
+                <div class="announcement-board">
+                    <div class="board-header">
+                        <div class="note-title">公告 / Announcement</div>
+                    </div>
+                    <div class="board-content">
+                        <p>写这个blog已经写得人精神状态濒临崩溃了<img src="./m/bocchi seizures.GIF" alt="抽搐.jpg"></p>
+                        <p>其实本来有很多<span class="cross">伟大</span>的设想但都没有来得及做，也有很多有趣的东西没来得及放上去，还有一些很明显的bug。目前先用github静态部署，之后可能会考虑搞个服务器，但也算是在自己设的ddl（2026.1.1）前完成了。</p>
+                        <p>在此特别鸣谢我的四位非人类老师（）能遇见你们真好</p>
+                        <p>会努力更新的，所以，欢迎常来看看。忘了在哪看到过一句话：</p>
+                        <p class="quotes">“人生在你死之前都处于未完成状态。”</p>
+                        <p>我想这个小网站也是。</p>
+                    </div>
+                    <div class="note-info">
+                        <span class="note-tag">Welcome</span>
+                        <span class="note-tag">Guide</span>
+                    </div>
                 </div>
-                <div class="board-content">
-                    <p>写这个blog已经写得人精神状态濒临崩溃了<img src="./m/bocchi seizures.GIF" alt="抽搐.jpg"></p>
-                    <p>其实本来有很多<span class="cross">伟大</span>的设想但都没有来得及做，也有很多有趣的东西没来得及放上去，还有一些很明显的bug。目前先用github静态部署，之后可能会考虑搞个服务器，但也算是在自己设的ddl（2026.1.1）前完成了。</p>
-                    <p>在此特别鸣谢我的四位非人类老师（）能遇见你们真好</p>
-                    <p>会努力更新的，所以，欢迎常来看看。忘了在哪看到过一句话：</p>
-                    <p class="quotes">“人生在你死之前都处于未完成状态。”</p>
-                    <p>我想这个小网站也是。</p>
-                </div>
-                <div class="note-info">
-                    <span class="note-tag">Welcome</span>
-                    <span class="note-tag">Guide</span>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const overlay = document.getElementById('announcementOverlay');
+                const firstVisitLink = document.getElementById('firstVisit'); // 确保你的导航栏“初次来访”ID正确
+                const closeBtn = document.getElementById('closeBoard');
+
+                // 打开公告板
+                if (firstVisitLink) {
+                    firstVisitLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        overlay.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // 禁止页面滚动
+                    });
+                }
+
+                // 点击叉号关闭
+                closeBtn.addEventListener('click', function() {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+
+                // 点击背景变暗区域关闭
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        overlay.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+        </script>
+
+        <div class="main-content">
+            <!-- 背景 -->
+            <div class="background"></div>
+
+            <!-- 猫猫 -->
+            <div id="cat"><img src="./m/cat.png"></div>
+
+            <div class="right">
+                <!-- 标题 -->
+                <div class="logo"><img src="./m/title.png"></div>
+
+                <!-- 导语 -->
+                <p class="introduction">你好～这里是Dream的个人网站<br>本站含有大量碎碎念和少量彩蛋<br>
+                    希望这堆杂七杂八的网页能给你提供一点有趣的东西<br>如果不能的话就把它当成一个人类观察样本吧</p>
+                
+                <div class="update-buttons">
+                    <!-- 近期更新 -->
+                    <ul class="update">近期更新
+                        <li>
+                            <a href="essay.html#note-20">今天不读严肃文学</a>
+                            <span class="small">2026.3.7</span>
+                        </li>
+                        <li>
+                            <a href="essay.html#note-19">无聊</a>
+                            <span class="small">2026.3.6</span>
+                        </li>
+                        <li>
+                            <a href="essay.html#note-18">March</a>
+                            <span class="small">2026.3.4</span>
+                        </li>
+                    </ul>
+
+                    <!-- 神奇按钮 -->
+                    <table id="button">
+                        <tr>
+                            <td>
+                                <img src="./m/button-red.png" id="button_red">
+                                <img src="./m/button-red1.png" id="button_red1">
+                            </td>
+                            <td>点我开启工具箱</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./m/button-green.png" id="button_green" onclick="randomRedirect()">
+                                <img src="./m/button-green1.png" id="button_green1">
+                            </td>
+                            <td>点我随机跳转页面</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./m/button-blue1.png" id="button_blue1">
+                                <img src="./m/button-blue.png" id="button_blue">
+                            </td>
+                            <td>点我放烟花</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('announcementOverlay');
-            const firstVisitLink = document.getElementById('firstVisit'); // 确保你的导航栏“初次来访”ID正确
-            const closeBtn = document.getElementById('closeBoard');
-
-            // 打开公告板
-            if (firstVisitLink) {
-                firstVisitLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    overlay.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // 禁止页面滚动
-                });
-            }
-
-            // 点击叉号关闭
-            closeBtn.addEventListener('click', function() {
-                overlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-
-            // 点击背景变暗区域关闭
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    overlay.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-    </script>
-
-    <!-- 背景 -->
-    <div class="background"></div>
-
-    <!-- 标题 -->
-     <div class="logo"><img src="./m/title.png" width="660"></div>
-
-    <!-- 猫猫 -->
-    <div id="cat"><img src="./m/cat.png" height="650"></div>
-    
-    <!-- 导语 -->
-    <p class="nar">你好～这里是Dream的个人网站<br>本站含有大量碎碎念和少量彩蛋<br>希望这堆杂七杂八的网页能给你提供一点有趣的东西<br>如果不能的话就把它当成一个人类观察样本吧</p>
-
-    <!-- 近期更新 -->
-    <ul class="update">近期更新
-        <li>
-            <a href="essay.html#note-20">今天不读严肃文学</a>
-            <span class="small">2026.3.7</span>
-        </li>
-        <li>
-            <a href="essay.html#note-19">无聊</a>
-            <span class="small">2026.3.6</span>
-        </li>
-        <li>
-            <a href="essay.html#note-18">March</a>
-            <span class="small">2026.3.4</span>
-        </li>
-    </ul>
-
-    <!-- 神奇按钮 -->
-     <ul id="button">
-        <li>点我开启工具箱</li>
-        <li>点我随机跳转页面</li>
-        <li>点我放烟花</li>
-     </ul>
-
-     <img src="./m/button-red1.png" id="button_red1">
-    <img src="./m/button-green1.png" id="button_green1">
-    <img src="./m/button-blue1.png" id="button_blue1">
-    <img src="./m/button-red.png" id="button_red">
-    <img src="./m/button-green.png" id="button_green" onclick="randomRedirect()">
-    <img src="./m/button-blue.png" id="button_blue">
 
     <script>
         function randomRedirect() {
