@@ -1579,8 +1579,12 @@ html {
         padding-right: 8vw;
     }
 
+    .nav {
+        padding: 5px 5px;
+    }
+
     .title {
-        padding: 10px 10px;
+        padding: 5px 5px;
     }
 
     .logo img, .introduction, .update-buttons {
@@ -1589,10 +1593,13 @@ html {
 
     .introduction, .update {
         font-size: 1em;
+        padding: 2px 5px;
     }
-}
 
-@media (max-width: 700px) {
+    #button {
+        margin-left: 2px;
+    }
+
     #button td:last-child {
         display: none;
     } 
