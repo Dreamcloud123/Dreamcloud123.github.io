@@ -3,6 +3,14 @@
     font-family: "Songti SC","Times New Roman",Georgia,Serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.src h3 {
+    scroll-margin-top: 100px;
+}
+
 p {
     font-size: 16px; 
     line-height: 1.5;
@@ -243,7 +251,7 @@ a:hover {
     display: block;
 }
 
-/* 遮罩层：变暗效果 */
+/* 公告板 */
 .overlay {
     display: none;
     position: fixed;
@@ -251,12 +259,11 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 网页变暗 */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 9999;
-    backdrop-filter: blur(3px); /* 轻微模糊 */
+    backdrop-filter: blur(3px);
 }
 
-/* 包装层：用于定位关闭按钮 */
 .board-wrapper {
     position: absolute;
     top: 50%;
@@ -264,37 +271,33 @@ a:hover {
     transform: translate(-50%, -50%);
 }
 
-/* 公告板主体：严格参考 .note 样式 */
 .announcement-board {
     width: 800px;
     height: 500px;
-    background-color: #fbf7f1; /* 统一底色 */
-    border-radius: 15px;      /* 统一圆角 */
+    background-color: #fbf7f1;
+    border-radius: 15px;
     padding: 30px 40px;
-    border: 1px solid #cec1ab; /* 实线边框 */
+    border: 1px solid #cec1ab;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 }
 
-/* 标题居中并带有分割线 */
 .board-header {
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #cec1ab; /* 标题与正文间的分割线 */
+    border-bottom: 1px solid #cec1ab;
     display: flex;
-    justify-content: center; /* 标题居中 */
+    justify-content: center;
 }
 
-/* 标题字体样式 */
 .board-header .note-title {
     font-size: 1.4rem;
     color: #b59e7d;
     font-weight: bold;
 }
 
-/* 正文内容区域 */
 .board-content {
     flex: 1;
     overflow-y: auto;
@@ -303,13 +306,12 @@ a:hover {
     font-size: 1.1rem;
 }
 
-/* 外侧右上角叉号 */
 .close-btn-outer {
     position: absolute;
-    top: -40px;  /* 向上偏移到板子外侧 */
-    right: -40px; /* 向右偏移到板子外侧 */
+    top: -40px;
+    right: -40px;
     font-size: 40px;
-    color: #ffffff; /* 白色在深色遮罩上更清晰 */
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.2s;
     line-height: 1;
@@ -336,20 +338,17 @@ a:hover {
 }
 
 /* 侧边栏 */
-.left-bar, .right-bar, .left-bar-1 {
+.left-bar, .right-bar {
     background-color: #fbf7f1;
     border-radius: 15px;
-    font-size: 16px; 
-    line-height: 1.5;
-    margin-top: 100px;
     display: inline;
 }
 
-.left-bar, .left-bar-1 {
+.left-bar {
     float: inline-start;
     left: 25px;
     padding: 0px 10px;
-    width: 200px;
+    width: 10vw;
     height: auto;
     max-height: 85vh;
     overflow-y: auto;
@@ -496,14 +495,7 @@ a:hover {
 }
 
 /* 设置平滑滚动，点击目录时页面会丝滑滑动 */
-html {
-    scroll-behavior: smooth;
-}
 
-/* 防止跳转后标题被导航栏遮挡 (假设导航栏高度约80px) */
-.src h3 {
-    scroll-margin-top: 100px;
-}
 
 /* 搜索栏 */
 .n-search-area {
@@ -961,6 +953,14 @@ html {
 .src a {
     display: block;
 }
+
+.page-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1.5vw;
+}
+
 /* 记事 */
 .note-container {
     display: inline-block;
@@ -1025,12 +1025,6 @@ html {
     object-fit: contain;
     max-width: 400px;
     margin-left: 25px;
-}
-
-.left-column {
-    display: flex;
-    flex-direction: column; /* 让左侧的两张图片纵向排列 */
-    gap: 10px;               /* 占用一定的比例空间 */
 }
 
 .note-info {
@@ -1581,11 +1575,11 @@ html {
 
     .update {
         font-size: 1em;
-        padding: 10px 15px 10px 30px
+        padding: 10px 5px 10px 30px
     }
 
     #button {
-        margin-left: 20px;
+        margin-left: 30px;
     }
 
     #button td:last-child {
