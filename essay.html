@@ -35,7 +35,6 @@
     <div id="announcementOverlay" class="overlay">
         <div class="board-wrapper">
             <span id="closeBoard" class="close-btn-outer">&times;</span>
-            
             <div class="announcement-board">
                 <div class="board-header">
                     <div class="note-title">公告 / Announcement</div>
@@ -87,1092 +86,1167 @@
         });
     </script>
 
-    <!-- 左栏 - 目录 -->
-    <div class="left-bar">
-        <ul><span class="bar-title">目录</span>
-            <li><span class="column-date">2026.3</span>
-                <ul>
-                    <li><a href="#note-20" onclick="highlightLink(this)">今天不读严肃文学</a></li>
-                    <li><a href="#note-19" onclick="highlightLink(this)">无聊</a></li>
-                    <li><a href="#note-18" onclick="highlightLink(this)">March</a></li>
-                </ul>
-            </li>
-            <li><span class="column-date">2026.2</span>
-                <ul>
-                    <li><a href="#note-17" onclick="highlightLink(this)">放假</a></li>
-                    <li><a href="#note-16" onclick="highlightLink(this)">新年快乐！</a></li>
-                    <li><a href="#note-15" onclick="highlightLink(this)">Indulged in Reading</a></li>
-                    <li><a href="#note-14" onclick="highlightLink(this)">书，你在掠夺我的小珍珠</a></li>
-                </ul>
-            </li>
-            <li><span class="column-date">2026.1</span>
-                <ul>
-                    <li><a href="#note-13" onclick="highlightLink(this)">Random Poetry Composition</a></li>
-                    <li><a href="#note-12" onclick="highlightLink(this)">abt献给阿尔吉侬的花束</a></li>
-                    <li><a href="#note-11" onclick="highlightLink(this)">学习#d4</a></li>
-                    <li><a href="#note-10" onclick="highlightLink(this)">学习#d3</a></li>
-                    <li><a href="#note-9" onclick="highlightLink(this)">学习#d2</a></li>
-                    <li><a href="#note-8" onclick="highlightLink(this)">总之就是又开始学习了</a></li>
-                    <li><a href="#note-7" onclick="highlightLink(this)">好用的ae插件</a></li>
-                </ul>
-            </li>
-            <li><span class="column-date">2025.12</span>
-                <ul>
-                    <li><a href="#note-6" onclick="highlightLink(this)">个人2025年度原画师</a></li>
-                    <li><a href="#note-5" onclick="highlightLink(this)">Some Interpretion on The Catcher in the Rye</a></li>
-                    <li><a href="#note-4" onclick="highlightLink(this)">可能要跟哲学过一辈子了……</a></li>
-                </ul>
-            </li>
-            <li><span class="column-date">2025.11</span>
-                <ul>
-                    <li><a href="#note-3" onclick="highlightLink(this)">abt地下室手记</a></li>
-                    <li><a href="#note-2" onclick="highlightLink(this)">来点abt作画的小作文</a></li>
-                    <li><a href="#note-1" onclick="highlightLink(this)">The Fault in Our Stars</a></li>
-                </ul>
-            </li>
-        </ul>
+    <div id="toggle-btn" class="toggle-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
     </div>
 
-
-    
-    <!-- 正文 -->
-    <div class="note-container">
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="note" id="note-">
-            <div class="note-header">
-                <div class="note-title">标题</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>日期</span>
-                    </div>
-                    <div class="note-mood">心情</div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">标签</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div> -->
-
-
-        <div class="note" id="note-20">
-            <div class="note-header">
-                <div class="note-title">今天不读严肃文学</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年3月7日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">碎碎念</a>
-                        <a href="#" class="note-tag">读书</a>
-                        <a href="#" class="note-tag">政治</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>前天刷微博发现百妖谱终于出5了，立即下单买来看。今天不读严肃文学！</p>
-            <p>继续前文的经济小解说。正好最近在开两会诶，友谊宾馆周边都被围起来了。</p>
-            <p><span class="bold">政府投资</span>主要通过成立城投公司所为地方政府融资平台。因为政府不能直接从银行借债，所以需要通过建立专门的公司借钱投资，这类公司一般是国有独资企业，这样以来政府就有钱和渠道进行城市开发。
-                <br><span class="bold">政府融资</span>在基础设施建设项目中也主要通过地方政府融资平台，首先是向银行借贷，其次是发行债券，即城投债。<br>此处就有人要问：地方政府为什么不用中央的拨款去投资呢？简单理解就是，中央给的钱不够。具体原因详见<a href="https://baike.baidu.com/item/%E5%88%86%E7%A8%8E%E5%88%B6%E6%94%B9%E9%9D%A9/6547055" target="_blank">分税制改革</a>。
-                正所谓“平台”，地方政府融资平台就是一个政府流转资金的工具，这样政府才能更深入的参与到市场中去，毕竟是<span class="important">社会主义</span>市场经济体制。
-            </p>
-            <p><span class="bold">五、解读之一：建设服务型政府</span><br><span class="bold">（一）为什么要建设服务型政府？</span>首先是地方债务的问题。融资平台通过借债搞城市建设，但这种投资回报率低，收益无法覆盖债务利息支出，只能靠政府补贴。这种情况的风险在于，一旦经济遇冷，没有税收，地价下跌，政府就没钱补贴了。
-                其次是地方官员的腐败问题，直接结果是国有资产的流失，此外，在央地关系中说过，由于考核指标问题地方官员常为求短期经济增长牺牲长期利益，不利于经济长期健康向好发展。
-                <span class="bold">（二）如何建设服务型政府？</span>在谈“怎么做”之前我们必须搞清什么是<span class="important">服务型政府</span>。在课本中“坚持新发展理念”一课之前先提出了“以人民为中心的发展思想”，什么是“以人民为中心”？举个例子，<br><span class="quotes">出于政绩考虑，地方官员在基础投资方面偏重“看得见”的工程建设，如城市道路、地铁、桥梁、绿地等，而相对忽视“看不见”的工程，比如地下管网，所以每逢暴雨，“看海”的城市就很多。</span> 
-                <br>以上为书中原文。对应“为什么”部分的分析，具体的应对措施分两部分展开。对地方债务治理上，实行了如推动融资平台转型，破除政府为其形成的“隐性担保”、约束银行对融资平台的放贷、问责官员、债务置换为地方政府发行的公债等一系列措施。针对腐败问题，最常听闻的应该就是党的十八大以来的反腐运动，也包括政绩考核指标的转变。总结起来就是：转变政府职能（将政府“促进经济增长”的职能转向“满足人民日益增长的美好生活需要”），深化简政放权（因为政府承担了经济发展的任务，要扮演的角色太多，支出多，积累的债务自然就多，所以要通过放权将“经济发展”的重担分摊出去，简化政府的角色），
-                创新监管方式（针对腐败等一系列问题），增强政府公信力和执行力，建设人民满意的服务型政府。
-            </p>
-            <p>以上为微观机制解读，下面开始解读宏观现象。</p>
-            <p><span class="bold">六、解读之二：经济高质量发展</span><br>（一）转变经济发展方式，优化经济结构，深化供给侧结构性改革<br>（二）共享发展成果，实现共同富裕
-            <p><span class="bold">七、解读之三：构建以国内大循环为主体、国内国际双循环相互促进的新发展格局</span><br>写不动了留给明天。<p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div>
-
-
-        <div class="note" id="note-19">
-            <div class="note-header">
-                <div class="note-title">无聊</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年3月6日</span>
-                    </div>
-                    <div class="note-mood"><i class="fa-solid fa-face-meh"></i></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">碎碎念</a>
-                        <a href="#" class="note-tag">学习</a>
-                        <a href="#" class="note-tag">政治</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>最近做的四道导数题都做错了，圆曲也算得好慢<i class="fa-solid fa-face-sad-cry"></i></p>
-            <p>其实我应该去写一点化学/语文，但是我懒，我只想刷数学。（虽然也算不出来吧……</p>
-            <p>沉迷观鸟，小鸟真可爱，反复品鉴昨日拍下的动态夜师傅的视频<i class="fa-solid fa-face-grin-hearts"></i></p>
-            <p>刚才躺在床上的时候思考了一下发现数学如果圆曲算不出来，导数算不出来，新定义第二问也做不出来，根本不可能上130了……这么想来身边的某些人真是该死的脑子好使呢（绝望地嚎叫）</p>
-            <p>每天醒来的第一件事就是想睡觉。可恶我到底为什么今天早晨要喝咖啡，绝对是听Expresso听嗨了，现在想睡觉也睡不着。醒着也不知道干什么<i class="fa-solid fa-face-sad-cry"></i>
-                哦我是否应该完善一下这个小网页，至少写一个响应式设计（每次我在这写东西的时候就会想起这件事但事实是知道现在也没有弄呢）。没有想好如果变成手机端了的话应该怎么排版，不知道把侧栏放在哪，如果是在两侧收起的话还得考虑到展开的ui，
-                头大，不知道怎么搞。</p>
-            <p>------------------------分隔线---------------------</p>
-            <p>写点关于政治必修二中的经济政策的一些补充性解读吧，可以算是对<span class="work-name">置身事内</span>这本书的反刍。</p>
-            <p><span class="bold">一、政府和市场关系</span><br>首先必须明确，政府和市场绝对不是二元对立的关系。课本教学中政府往往通过实行宏观经济政策调控市场，似乎是政府对市场的行为做出响应，其反应<span class="important">后于</span>市场，
-                但在实际过程中政府和市场往往是同时动态变化的，政府的资金的利用也是市场行为的一部分，两者处于一个辩证关系中。此处两者的关系可以通过矛盾的同一性和斗争性理解。</p>
-            <p><span class="bold">二、政府作为市场主体</span><br>根据必修二，政府有六个经济职能：<br>（1）实施宏观经济政策；<br>（2）市场监管；<br>（3）实施产业政策；<br>（4）提供公共服务；<br>（5）实施区域和环境政策；<br>（6）制定重大发展战略和中长期经济社会发展规划
-                。<br>但政府在市场中扮演的角色不仅限于此。首先，政府有税收和债务作为自己的资金来源；其次，为了提供公共服务和实现经济发展目标，政府也需要通过财政支出来建设公共服务设施、投资企业等。央行如何实行货币政策已经被多次讨论了，而前文所说钱的收入和支出主要围绕财政政策，后续讨论中也将集中这一部分展开。</p>
-            <p><span class="bold">三、中央与地方关系</span><br>国务院（即中央政府）主要定“大方向”，即经济发展目标、侧重产业等宏观发展前景，而地方政府则负责将“大方向”落实为具体措施，以经济发展数据来汇报一年的工作成果。此处涉及到如何<span class="bold">“充分发挥地方政府的积极性”</span>。
-                在此我们应该认识到，政府是由人组成的，而人的眼光往往容易局限在他所在的层级。所以中央应该考虑的是如何制定机关内的条例和奖赏措施，以便规范政府成员的履职，以及应该设立如何的衡量标准，以验收地方政府的工作成果。举个例子，地方政府在拿到预算后首先想到的大概率是“如果花这笔钱才能让上级看到我的工作成果”，
-                对中央而言这就牵扯到两个部分——“给多少钱”以及“如何检验发展成果”。在某种程度上，过去以破坏环境为代价求短期的经济增速可以理解为，每个政府官员只任职一段时间，如果以“GDP增长率”来衡量这一时期他的工作成果的话，那就会不可避免地导致他为求短期经济增长而搁置长期环境问题，把后者留给下一任解决。
-                自此我们就可以看出中央是如何对地方起领导作用的。其实在此处也可以思考一下为何“腐败”是政府难以克服的顽疾，或者说，“人情社会”是如何在官僚体系中起作用的。不过这两个问题过于细节在此先不展开（其实是笔者也没想明白）。</p>
-            <p><span class="bold">四、政府投融资</span><br>明天再写。这块应该就可以引出我们的主要话题之一地方政府融资平台了。前面央地关系写嗨了扯得有点多。</p>
-            <p>------------------------分隔线---------------------</p>
-            <p>找同学问题他还给我总结了方法，太靠谱了，感动<i class="fa-solid fa-face-grin-stars"></i></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div>
-
-        <!-- 图片轮播 -->
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const posts = document.querySelectorAll('.note-photo-container');
-
-            posts.forEach((post) => {
-                const wrapper = post.querySelector('.slides-wrapper');
-                const slides = post.querySelectorAll('.slide');
-                const prevBtn = post.querySelector('.carousel-prev');
-                const nextBtn = post.querySelector('.carousel-next');
-                const indicators = post.querySelectorAll('.carousel-indicator');
-
-                if (!wrapper || !prevBtn || !nextBtn) {
-                    console.warn('某个帖子缺少轮播组件，已跳过：', post);
-                    return; 
-                }
-
-                let currentIndex = 0;
-                const totalSlides = slides.length;
-
-                if (totalSlides === 0) return;
-
-                function updateCarousel() {
-                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    indicators.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
-                }
-
-                nextBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // 防止某些浏览器的默认行为
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateCarousel();
-                });
-
-                prevBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateCarousel();
-                });
-
-                indicators.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        currentIndex = index;
-                        updateCarousel();
-                    });
-                });
-            });
-            });
-        </script>
-        
-        <div class="note" id="note-18">
-            <div class="note-header">
-                <div class="note-title">March</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年3月4日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">碎碎念</a>
-                        <a href="#" class="note-tag">读书</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>It felt like ages since I've last edited this blog, but it turns out that I've recently edidted it just two days ago. I don't know why time flow by so slow. It's like waking up and embracing another day of "not knowing what to do" and just end up reading, 
-                'cause you don't really want to do anything more brain-comsuming than absorbing words one-sidedly. It's not that I can't do any work physically. I can optimize this little blog by adding an eventlistener on the date to prevent from mistaking by manually 
-                typing it every time I update something, or I could do some vidoe editing, play with ae, basically, or I could go study, but it's just that I don't have the mood to do any of this. Math is cool, but chemistry sucks.
-                I'm not suppose to be saying that. It'll only makes me more unmotivated to finish my chemistry studying plans, but the truth is that I do feel this way.
-            </p>
-            <p>Okay, so now I think I can got on going with that I'm reading. After finishing <a href="essay.html#note-15">t&t&t</a>, I've read 7 more books. The most recent one is <span class="work-name">Turtles All the Way Down</span> by John Green. Yep, another John Green book after <span class="work-name">The Fault in Our Stars</span>.
-                It's personally to say but I like this book better since it's not that imaginative about teengage romances but also adequately <span class="important">romantic</span>. 
-                And SPOILERS ALERT, not every YA novel ends with the protagonists in love with each other. What fascinates me most about JG's stories is how he ampliflies a common flaw of humanity (or to say specifically, puberty) into some kind of disease and constrcuts the 
-                whole plot revolving around it. That specific cognition or apprehension or whatever weird imagination we had when we're adolescents is collective memory and somehow resonates with <span class="important">every</span> reader. 
-                It's like having someone peering into the hideous corner of our mind and digging out all those crazy thoughts and exposing it into the sunlight. That feeling of being understood consoles us when we struggle to be in line with the others in a society that limitates individuality and advocates for unformity. 
-            </p>
-            <p>As usual, comments-while-reading below.</p>
-            </div> 
-            <div class="note-photo-container">
-                <div class="photo">
-                    <div class="slides-wrapper">
-                        <div class="slide"><img src="./essay/cwr1.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr2.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr3.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr4.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr5.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr6.jpg"></div>
-                        <div class="slide"><img src="./essay/cwr7.jpg"></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
-                    <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-                    <div class="carousel-indicators">
-                        <span class="carousel-indicator active" data-slide="0"></span>
-                        <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="note" id="note-17">
-            <div class="note-header">
-                <div class="note-title">放假</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年2月22日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">碎碎念</a>
-                        <a href="#" class="note-tag">饮咖日记</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>人活着就是要吃很多很多的焦糖布丁。</p>
-            <p>所以死是一件不必急于求成的事。</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src="./essay/cafe1.jpg">
-                <img src="./essay/cafe2.jpg">
-            </div>
-        </div>
-
-
-        <div class="note" id="note-16">
-            <div class="note-header">
-                <div class="note-title">新年快乐！</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年2月18日</span>
-                    </div>
-                    <div class="note-mood"><i class="fas fa-laugh-beam"></i></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">节日祝福</a>
-                        <a href="#" class="note-tag">碎碎念</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>7号给同学带小蛋糕时，eq评价我“真乃奇女子也”。只能说很中肯了。</p>
-            <p>似乎这一年时常被他人或自己内心质问是否后悔xxx？是否后悔上rdfz、是否后悔选物理、是否后悔那天给我发消息……说到底都是因为我们觉得在作出这个选择的未来有什么“错了”。很多时候我无法坦然地对哪些问题说出不后悔，我也常常会幻想“如果当初”没有那么选择是不是会有一个更好的结局。</p>
-            <p>但很多问题在我看异国日记ep7是明了了——没有什么不会后悔的选择。</p>
-            <p>休学的主要原因之一是因为我认为自己已经“lost myself”了，但现在，虽然过程乱七八糟的，至少此时此刻，我喜欢我正在做的事。</p>
-            <p>所以，继续当一个神奇的人吧！</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src="./essay/newyear.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-15">
-            <div class="note-header">
-                <div class="note-title">Indulged in Reading</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年2月8日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">阅读</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p><span class="work-name">Tomorrow and Tomorrow and Tomorrow</span> is <span class="important">masterpiece</span>.</p>
-            <p>If TFiOS is 7/10, then t&t&t would be a 9/10. It has this exotic perspective into human relationships that is touching and relevant today.</p>
-            <p>The citations just fit so accuratly and at the same time it pushed your boundaries of to contemplate deeper and broader into the emotional system.</p>
-            <p>Some comments and quotations below.</p>
-            </div> 
-            <div class="note-photo-container">
-                <img height="150" src="./essay/ttt1.jpg">
-                <img height="150" src="./essay/ttt2.jpg">
-                <img height="150" src="./essay/ttt3.jpg">
-            </div>
-            <div class="note-photo-container">
-                <div class="left-column">
-                    <img src="./essay/ttt8.jpg">
-                    <img src="./essay/ttt4.jpg">
-                </div>
-                <img src="./essay/ttt6.jpg" class="right-photo">
-            </div>
-            <div class="note-photo-container">
-                <img src="./essay/ttt5.jpg">
-                <img src="./essay/ttt7.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-14">
-            <div class="note-header">
-                <div class="note-title">书，你在掠夺我的小珍珠</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年2月2日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">阅读</a>
-                        <a href="#" class="note-tag">泪目了</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>SPOILERS ALERT FOR <span class="work-name">The Kite Runner</span>!!</p>
-            <p>Ugggh...it hurts to read stories like this. I'm considering to put off reading <span class="work-name">A Thousand Splendid Suns</span> now cause it traps you in this anguish that assimilates through your bones. </p>
-            <p>My heart twinged when Hassan got raped by Assef, but after finishing the whole book I'm just...numb. That was when all the tradegy started, maybe even ealier, when Baba had sex with that Hazara woman. Looking back, you'll just mourn how careless the days were before the winter of 1975, when the grass was still glistening green and Amir and Hassan still sat under the promegant tree talking freely. My mind just kept fleeting back to those days, just like how Amir and Sohrad shared a childhood memory alike to each other.</p>
-            <p>I <span class="important">almost</span> cried when Baba died. My eyes was <span class="important">literally</span> with tears, but I held on to it since by that time I was reading in public. You see a <span class="important">valiant</span> man wilted into a ill-strickened elder, someone clenching on to his pride in the most desperate times of his life of his life now resigning to aging. All you can do is accept with your heart wrentched in reluctancy. </p>
-            <p>And Hassan...God I don't even want to recall that. A shot of a gun, and then blood went blasting. How light does his live weigh? And how heavy does his loyal heart? It's suffocating.</p>
-            <p>Too immersive to walk myself out.</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div>
-
-        <div class="note" id="note-13">
-            <div class="note-header">
-                <div class="note-title">Random Poetry Composition</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月31日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">诗歌</a>
-                        <a href="#" class="note-tag">只是脑子里随便冒出来的句子没有什么内涵请勿批判</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>I found myself straying in the garden.<br>Rosemary thistles intertwined amongst where spring has rotten.<br>Mint, as its scent stings my nostrils,<br>Heaved its fiber wings, trembling through the ordeal. <br>Through thy soul warm beam withers,<br>And in bleak barren mine chars into ember. <br>May her footsteps lead her afar, <br>For behind every fresh ornament underlies a ghosting scar. </p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div>
-        
-        <div class="note" id="note-12">
-            <div class="note-header">
-                <div class="note-title">abt献给阿尔吉侬的花束</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月30日</span>
-                    </div>
-                    <div class="note-mood"><i class="fas fa-face-sad-cry"></i></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">阅读</a>
-                        <a href="#" class="note-tag">泪目了</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>果然好哭。心理压抑但又哭不出来的时候就需要这种催化剂来释放压力。</p>
-            <p>从查理回去看他妈妈那段我就想哭，可惜眼泪已经流干了所以只能纯心痛。之前他发现手术在提高智商的同时会带来心智发展滞后的问题，但退化的倒计时又碾着他去在依旧高智商的时候去向家人展示这一面，去挖掘自己的童年经历。这个过程在某种程度上促进了他的心智成熟，他拥有了作为一个人而言的有关家庭的情感体验。</p>
-            <p>但也会想，如果你的家庭只会在你是一个正常人的情况下接纳你，那以正常人身份的和解总是别扭的、缺乏信任感的。</p>
-            <p class="quotes">“这些年的梦魇已经够痛苦了，我只想看到她微笑，并知道我才是能让她快乐的人。在我的生命中，我第一次让她的嘴唇绽开笑容。”</p>
-            <p class="quotes">“我要你留下一份报告，这样你就可以告诉别人，你儿子其实不是笨蛋。”</p>
-            <p>童年的受虐经历致使查理以一种卑微地姿态恳求接纳。（这是否可以与他对会场中的科学家的傲慢做对比……？）然而对方什么也不记得了。那些萦绕在你睡梦中多年的噩梦早已变成对方茶余饭后的闲聊话题，只有母亲举起刀时的应激反应留存着过去存在过的痕迹，但妹妹说她疯了。到最后你发现，你所怨恨的只是一个空对象，你只能释然了，你被迫释然了。</p>
-            <p>查理智力退化的那一段终于是让我心痛到挤出眼泪了，从进步报告里出现第一个错别字开始我就蚌埠住了。莫名的非常能共情这种眼睁睁看着自己丧失学习能力的无力感。</p>
-            <p class="quotes">“拜托……拜托不……不要让我忘记怎么读和写……”</p>
-            <p>为什么面包店的人在查理变会白痴后又将他当朋友了呢？不再是捉弄嘲笑，而是真心实意的朋友。</p>
-            <p class="quotes">“还有：如果你有机会请放一些花在后院的阿尔吉侬坟上。”</p><br>给阿尔吉侬献花吧，它已经从迷宫中逃出去了。</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=>
-            </div>
-        </div>
-        
-        <div class="note" id="note-11">
-            <div class="note-header">
-                <div class="note-title">学习d#4</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月19日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">学习</a>
-                        <a href="#" class="note-tag">笔记</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>不用参加期末考试到底是幸运还是失落呢。</p>
-            <p>早晨起来赶作业，周末还是玩得太疯了。最近搬到朝阳这边住了，应该会开启一部分探店计划，主要是集中在望京吧。</p>
-            <p>来到朝阳的第一件事就是早上点小面包的外卖，出品果然可靠<i class="fas fa-face-sad-cry"></i></p>
-            <p>9页物理题做了近3个小时，认真分析了一下还是建模不够熟练，该刷题。</p>
-            <p>今天的物理作业有13页，还得写高三刚考完的语文卷，要死人了啊啊啊啊</p>
-            <p>每当要做的事太多时就会想拼死命，对于习惯性认真做事的人来讲，不努力也是一件很难的事。改变思维方式很难，但能改变思维方式的人很nb，拼死命做事谁都会，那只是条捷径，我只是在逃避，选择那条更简单的路。<a href="https://bgm.tv/subject/147068" target="_blank" class="work-name">三月的狮子</a>中香子指着比自己更成功的“外来者”零说：“努力难道不也是一种天赋吗”，当时好像有什么击中了我，但现在我又mygo了。</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            </div> 
-            <div class="note-photo-container">
-                <img src=./essay/study8.jpg>
-            </div>
-        </div>
-        
-        <div class="note" id="note-10">
-            <div class="note-header">
-                <div class="note-title">学习#d3</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月16日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">学习</a>
-                        <a href="#" class="note-tag">笔记</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>早上5:33就醒了，辗转反侧到快8:00才爬起来补作业。今早我将奖励自己吃德南面包房的提拉米苏！酒味很香且浸润得足够充分，值得一吃。每个早晨想吃面包/甜点却发现店家没开门/想吃的没出炉是最难受的。btw麦的枫糖松饼怎么下架了啊TT早晨吃点甜甜的热乎的东西真的会让人一天都开心的</p>
-            <p>在9:11把作业写完了，太成功了</p>
-            <p>下午3:00多到图书馆，一直在写摘抄，不想写理科了，干点不费脑子的活。忙起来很舒服。</p>
-            <p>明天休息。</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src="./essay/study7.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-9">
-            <div class="note-header">
-                <div class="note-title">学习#d2</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月15日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">学习</a>
-                        <a href="#" class="note-tag">笔记</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>早上起来列了to-do list(finally)，但睡前发现一项也没完成。</p>
-            <p>上午上完物理课就和出去参加聚餐了。一桌三个家庭，每个家庭的孩子都需要心理医生，为什么会这样呢？又想起了<span class="work-name">《要有光》</span>中的<span class="work-name">京城篇</span>中的内容，当纪实文学真的变成触手可及的现实时反而会不再那么触目惊心。</p>
-            <p>下午和中午一起吃饭校友在圆明园的冰场划了冰再小逛了一会儿，看见了好多鸟和黑天鹅幼崽们（如p4）。我们是根据小红书上的帖子找过去的，去的时候发现比原帖少了一只小鹅，喂鹅的大姐证实了心中的猜疑：它死了。又是一条没能挨过冬季的生命。</p>
-            <p>晚上7:15到的图书馆，9:30左右就走了，物理作业都没写完，不想写了，撤！</p>
-            <p>学习的时候总觉得吃饭很耽误时间，所以中午很少去食堂吃饭，今天突然创新性地想到高三中午懒得吃饭可以喝安素，又方便又省时又营养全面，那些衡水模式的中学天天压缩吃饭时间到10分钟，不如每顿发400ml安素，边喝边学一点不耽误。</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src="./essay/study3.jpg">
-                <img src="./essay/study4.jpg">
-            </div>
-            <div class="note-photo-container">
-                <img src="./essay/study5.jpg">
-                <img src="./essay/study6.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-8">
-            <div class="note-header">
-                <div class="note-title">总之就是又开始学习了</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月14日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">学习</a>
-                        <a href="#" class="note-tag">笔记</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>不知到为什么但第一个开始学的其实是物理……太糟糕了这科学得有点！</p>
-            <p>1:12p.m. 在写物理的间隙久违的动笔写了化学的期中卷，被治愈了，化学我们喜欢你</p>
-            <p>1:14p.m. 写作业 听歌</p>
-            <p>1:25p.m. 之前我是怎么上得下去学的啊，上学好累——TTTT</p>
-            <p>1:44p.m. 我得了一学习就想睡觉的病//继续写化学！！</p>
-            <p>1:48p.m. 已经不记得乙醇长什么样了[broken]</p>
-            <p>1:50p.m. 酚可以与氢氧化钠反应吗？艹又忘了</p>
-            <p>1:54p.m. Gemini说可以。</p>
-            <p>3:19p.m. 炸裂了，我怎么还得做作业，ughhhh</p>
-            <p>3:20p.m. 看点小说抚慰人心后就出发去图书馆写作业，顺便写点to-do list吧</p>
-            <p>5:05p.m. 抵达图书馆，常坐的座位没有人，嘿嘿开心</p>
-            <p>5:21p.m. 不想评价</p>
-            <p>5:49p.m. 我真服了，对面在哪电脑做什么激烈的运动，搞得整个桌子都在晃</p>
-            <p>10:06p.m. 嘿嘿回家了，开心。你问我为什么6:00之后就没吐槽了？哦，因为六点之后我就没有在写物理了。</p>
-            </div> 
-            <div class="note-photo-container">
-                <img src="./essay/study1.jpg">
-                <img src="./essay/study2.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-7">
-            <div class="note-header">
-                <div class="note-title">好用的ae插件</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2026年1月7日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">分享</a>
-                        <a href="#" class="note-tag">剪辑</a>
-                        <a href="#" class="note-tag">插件</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p><a href="https://aescripts.com/after-effects/automation/flow/?srsltid=AfmBOooC2YSdKhSNh-yuBQlKKU4Kf713Uu0fbSzSf2UpimfP3iBq1vyg">Flow</a>，一款拯救拉曲线苦手的好插件。</p>
-            <p>将ae在时间轴面板中显示的图标编辑器单独开了一个面板，很好解决了缩放不准导致无法看全曲线的问题（如p1）。</p>
-            <p>还有默认的曲线方程可以直接应用，完美解决了拉曲线苦手（e.g.我）拉不出自己想要的效果的问题。选中关键帧，拉曲线，点击应用就行。还可以存预设，如缓入缓出（如p2）。</p>
-            <p>应该算是ae庞杂的插件系统中功能简单且很好上手的一个了，而且占内存小所以很好带，可惜近期才发现。</p>
-            <p>下次有时间吐槽一下bcc和particular这两个天天把我ae搞崩的罪魁祸首。</p>
-            </div> 
-            <!-- <div class="note-photo-container">
-                <img src="./essay/sakuga1.jpg">
-                <img src="./essay/sakuga2.jpg"> -->
-            </div>
-        </div>
-
-        <div class="note" id="note-6">
-            <div class="note-header">
-                <div class="note-title">个人2025年度原画师——</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年12月21日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">作画</a>
-                        <a href="#" class="note-tag">2025年终盘点</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>中井杏(X: <a href="https://x.com/KoroB_Greey86">@ころぼん</a>)！！！</p>
-            <p>04年的天才美少女原画师，在<span class="work-name">琉璃的宝石</span>中的演技卡表现堪称惊艳，之前在同为藤井监督负责的<span class="work-name">别当哥</span>里也有出色的表现。</p>
-            <p>荣誉提名：藤本航己</p>
-            <p>在《电锯人：蕾塞篇》中无论是战斗或演技都有贡献出质量稳定的卡，但考虑到本作作画资源溢出，且考虑到藤本航己在23年的<span class="work-name">芙丽莲</span>中表现更为出色（指菲伦坐下那一卡），姑且只给一个荣誉提名。</p>
-            </div> 
-        </div>
-
-        <div class="note" id="note-5">
-            <div class="note-header">
-                <div class="note-title">Some Interpretions on The Catcher in the Rye</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年12月16日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">青春</a>
-                        <a href="#" class="note-tag">意识流</a>
-                        <a href="#" class="note-tag">书评</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p class="quotes">"Anyway, I see such a picture: all these little kids are playing some game in this big field of rye and all. Thousands of little kids, and nobody's around - nobody big, I mean - except me. And I'm standing on the edge of some crazy cliff. And my job is to catch everybody if they start to go over the cliff - I mean if they're running and they don't look where they're going. I come out from somewhere and catch them. That's all I'd like to do all day. I'd just like to be the catcher in the rye and all. I know it's crazy, but that's the only thing I'd really like to be.”</p>
-            <p>This might be the most classic paragraph of this book. When the protagonist Houlden Caulfield compares himself to a catcher, catching the kids from falling down the cliff. But what's under the cliff? Many poeple interpret it as "adulthood", but that's such an obscure concept, too one-sided to generalize the sophisticated social problem in mordern society reaching out to even now.</p>
-            <p>Let's start with the historical background of this novel. Taken place in 1949, it reflects the social appearance of America after World War II, when the boom in economy brought abundance in personal assets, but as cultural development falls behind, people started to suffer in vain. In opposite to the properity in economy, the society's spirits remained absent. "Snobbery, privilege, class injury, culture as a badge of superiority, sexual exploitation, education subordinated to status, warped social feeling, competitiveness, stunted human possibility, the list could go on." Through the observation and reflection of Houlden, the books reaveals the inner contradiction of the bourgeois society. Bills were draining up people's spirits. Houlden professed himeself as a liar, fabricating all his past experiences infront of Sunny, but <span class="important">truth</span> was what he really craved for, sincere emotions, genuine expressions. Sourrounded in a world of "phoney" people, he wrapped himself up in falsehood due to the fear of being misunderstood, being abnormal, of needing a psychoanalyst. And only with Pheobe could he unload his armors and reveal the long-hidden, indistinctive, vulnerable true self. Dancing, crying, leaving his red hunting hat to her. That's the problem with modernity.</p>
-            <p>It so hard to specifize <span class="important">Catcher</span>'s interpretion on one topic - it's a 16-year-old's turblulent adolescence. Every puberant's growing sessions reflects the structural issues of the period, and the latter is uncountable. Though <span class="important">Catcher</span> is widely classified as a coming-of-age novel, but did Houlden really grew out of this paradox? No. He narrates the story in a psycho ward. The problem remained unsolved. That's the bewilderment of everyone who remains comtemplative. Our minds wrestle to stay afloat in the void of indifference. Where will the ducks in the central park go in winter? Only silence remains.</p>
-            </div> 
-        </div>
-
-        <div class="note" id="note-4">
-            <div class="note-header">
-                <div class="note-title">可能要跟哲学过一辈子了……</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年12月5日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">哲学</a>
-                        <a href="#" class="note-tag">碎碎念</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>突然发现自己的哲学研究之路意外地标准。</p>
-            <p>初三的时候痴迷于古希腊哲学和中世纪宗教哲学，再带点文艺复兴，先是看各种导论和课程，高一懂得深了些遍补上了《理想国》；高一研究近代哲学，由笛卡尔对知识确定性的质疑引出的长达两个世纪的理性论和经验论的争执，Lebniz、Locke、Spinoza、Berkeley直到休谟提出怀疑论让大家意识到：”不行这个话题聊不下去了“。</p>
-            <p>已经不记得是什么时候认识的康德了，只记得高一下某个大考时一直没有想明白的一个问题，在考完的下午坐在学校旁的书店读纯批的时候豁然开朗了。可能是随着政治开始讲必修四，把德国古典哲学过完了，发现自己对黑格尔、谢琳、
-            费希特这三位的兴趣不大，可能也在政治组的推动下去看了些马哲相关内容，本雅明（空想社会主义？）、福克斯（经济）、毛选（显然这是马哲的中国化了）。穿插在这个过程中的是对后黑格尔时代哲学的学习，这时候事情开始乱起来了。
-            拜读了维特根斯坦的《逻辑哲学论》后发现以自己目前的理解能力根本搞不明白这个哥们儿在说什么；现象学算是感兴趣也钻得比较深的，从胡塞尔到海德格尔，并深深爱慕着后者；由此又研究起存在主义，萨特和加缪的理论体系并不
-            算庞杂，所以只能算是辅料，为什么当时没读尼采呢？可能觉得他太神经病了读了不利于心理健康吧。不过前段时间又拿起他了，果然人在心境相同时才能共情。</p>
-            <p>什么时候能读到福柯、边沁甚至齐泽克呢？什么时候能真正学点德语而不是只守着absoluter geist这种词来装x呢？这还只是浅层了解，深入研究的话，估计一生都不能完全了解一个哲学家吧。</p>
-            </div> 
-        </div>
-
-        <div class="note" id="note-3">
-            <div class="note-header">
-                <div class="note-title">abt地下室手记</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年11月19日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">陀翁</a>
-                        <a href="#" class="note-tag">阅读</a>
-                        <a href="#" class="note-tag">书评</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>真的看哭了……</p>
-            <p>在自我矛盾和纠结中个体的内心世界残忍地被撕裂，似乎能听到血肉分离的声音，既高尚又卑鄙，挣扎着又堕落着，伸手去触摸理想主义的光辉，又被芸芸众生所埋没。</p>
-            <p class="quotes">“他们不让我……我没法做一个……好人！”</p>
-            <p class="quotes">“廉价的幸福好呢，还是崇高的痛苦好？”</p>
-            <p>第一本陀翁，以后会有更多的。</p>
-            </div> 
-        </div>
-
-        <div class="note" id="note-2">
-            <div class="note-header">
-                <div class="note-title">来点abt作画的小作文</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年11月18日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">动画</a>
-                        <a href="#" class="note-tag">国漫</a>
-                        <a href="#" class="note-tag">作画</a>
-                        <a href="#" class="note-tag">小作文</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-                <p>看了<a href="https://www.bilibili.com/video/BV1HiUWBdES7/">【“闪击流石”为什么是近年最神的一场戏？《罗小黑》被低估的艺术丨万字拉片《罗小黑战记2》01】</a>后随便记录一些关于罗小黑打戏的思考。</p>
-                <p>视频里从“镜头语言”的角度分析的已经很清楚了，文本、节奏、分镜等等，但对于动画这一载体而言还是有必要把作画单独拎出来分析以下的。</p>
-                <p>总体而言罗小黑的作画很“合规”，甚至有些一板一眼（非贬义）。以打戏为例，画面张力常通过镜头运动（如甩镜头/旋转镜头）、构图倾斜（如斜向构图）、透视畸变（如广角时四周画面的拉伸）等外在手法去体现，而非在人物本身上作文章（见p1/p2）。人设上用突出的勾线和大面积的色块展现明暗层次和体积感，既便于刻画运动状态，也与精细且投射了柔光的背景建模作对比，使人物“跃然于纸上”。</p>
-                <p>至于为什么要如此处理打戏，可以给出几个猜测。一，迎合市场需求，强调镜头运动本身就是在模仿相机拍摄赋予动画电影一种“镜头感”，让看惯了真人/3D的观众迅速适应2D动画的演出形式。二，统一作画风格，毕竟国内2D动画产业并非成熟，不可能把一部商业电影当作各路原画师们大显身手的媒介。从某种程度上来讲这也是为了迎合市场。不过就分镜设计难度来讲这种方式对于监督/演出的要求极高，而在此不得不佩服mtjj的分镜水平，无论是动作、武器、背景、发生顺序等都展现得很简明清晰，所以哥们儿你还是专心做动画吧!!</p>
-            </div>
-            <div class="note-photo-container">
-                <img src="./essay/sakuga1.jpg">
-                <img src="./essay/sakuga2.jpg">
-            </div>
-        </div>
-
-        <div class="note" id="note-1">
-            <div class="note-header">
-                <div class="note-title">The Fault in Our Stars</div>
-                <div class="note-info">
-                    <div class="note-date">
-                        <span class="date-icon"></span>
-                        <span>2025年11月8日</span>
-                    </div>
-                    <div class="note-mood"></div>
-                    <div class="note-tags">
-                        <a href="#" class="note-tag">YA-novels</a>
-                        <a href="#" class="note-tag">书评</a>
-                    </div>
-                </div>
-            </div>
-            <div class="note-content">
-            <p>Remember reading a sample chapter on my kindle several years ago. Now finally picking up the whole story.</p>
-            <p>I really like how TFiOS is neatly structured through the callbacks of ordinary details hidden in daily interactions and how they thumps like ferocious thunder at specific moments. e.g. <span class="work-name">“And you said you don’t write poetry.”</span></p>
-            <p>I have to admit that there are limitations of teenage love stories: the boy has to be hot and sporty, the popular guy in school. But there’s also something that only YA novels can encompass: the unrealistic wonders of love. Hazel could started off randomly talking about the universe and infinity pretentiously and ends the topics on how perpetual their love is. With a fragmented life, people tend to think about these philosophical topics. They goes beyond bickering over the repetitive everyday life, because what seems unreachable to us is within inches to them (by this, I mean death). </p>
-            <p>I know it’s been highly recommended for its unique but authentic inspect into the life of cancer patients. Their depression, their struggles, and sarcasm on how the world commemorates them through their own aspect. So, I not going to talk more about this. </p>
-            <p>Though entitled The Fault in Our Stars, I would assume it is a simplified version. If I were to find an alternative for "fault", it would be <span class="important">hamartia</span>, and for “stars”, it would be <span class="important">universe</span>. </p>
-            <p></p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- 右栏 -->
-    <div class="right-bar">
-        <!-- 近期更新 -->
-        <div class="right-bar-1">
-            <span class="bar-title-right">近期更新</span>
-            <ul>
-                <li>
-                    <a href="essay.html#note-20">今天不读严肃文学</a>
-                    <span class="small">2026.3.7</span>
+    <div class="page-content">
+        <div id="sidebarOverlay" class="overlay"></div>
+        <!-- 左栏 - 目录 -->
+        <div class="left-bar" id="leftBar">
+            <ul><span class="bar-title">目录</span>
+                <li><span class="column-date">2026.3</span>
+                    <ul>
+                        <li><a href="#note-21" onclick="highlightLink(this)">根据《置身事内》一书对政治必修二的补充性解读</a></li>
+                        <li><a href="#note-20" onclick="highlightLink(this)">今天不读严肃文学</a></li>
+                        <li><a href="#note-19" onclick="highlightLink(this)">无聊</a></li>
+                        <li><a href="#note-18" onclick="highlightLink(this)">March</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="essay.html#note-19">无聊</a>
-                    <span class="small">2026.3.6</span>
+                <li><span class="column-date">2026.2</span>
+                    <ul>
+                        <li><a href="#note-17" onclick="highlightLink(this)">放假</a></li>
+                        <li><a href="#note-16" onclick="highlightLink(this)">新年快乐！</a></li>
+                        <li><a href="#note-15" onclick="highlightLink(this)">Indulged in Reading</a></li>
+                        <li><a href="#note-14" onclick="highlightLink(this)">书，你在掠夺我的小珍珠</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="essay.html#note-18">March</a>
-                    <span class="small">2026.3.4</span>
+                <li><span class="column-date">2026.1</span>
+                    <ul>
+                        <li><a href="#note-13" onclick="highlightLink(this)">Random Poetry Composition</a></li>
+                        <li><a href="#note-12" onclick="highlightLink(this)">abt献给阿尔吉侬的花束</a></li>
+                        <li><a href="#note-11" onclick="highlightLink(this)">学习#d4</a></li>
+                        <li><a href="#note-10" onclick="highlightLink(this)">学习#d3</a></li>
+                        <li><a href="#note-9" onclick="highlightLink(this)">学习#d2</a></li>
+                        <li><a href="#note-8" onclick="highlightLink(this)">总之就是又开始学习了</a></li>
+                        <li><a href="#note-7" onclick="highlightLink(this)">好用的ae插件</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="gallery.html#travel-shanghai">相册>旅游>上海</a>
-                    <span class="small">2026.3.2</span>
+                <li><span class="column-date">2025.12</span>
+                    <ul>
+                        <li><a href="#note-6" onclick="highlightLink(this)">个人2025年度原画师</a></li>
+                        <li><a href="#note-5" onclick="highlightLink(this)">Some Interpretion on The Catcher in the Rye</a></li>
+                        <li><a href="#note-4" onclick="highlightLink(this)">可能要跟哲学过一辈子了……</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="essay.html#note-17">放假</a>
-                    <span class="small">2026.2.22</span>
+                <li><span class="column-date">2025.11</span>
+                    <ul>
+                        <li><a href="#note-3" onclick="highlightLink(this)">abt地下室手记</a></li>
+                        <li><a href="#note-2" onclick="highlightLink(this)">来点abt作画的小作文</a></li>
+                        <li><a href="#note-1" onclick="highlightLink(this)">The Fault in Our Stars</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
 
-        <!-- 搜索 -->
-        <div class="right-bar-2">
-            <div class="n-search-area">
-                <div class="n-search-box">
-                    <div class="n-search-input-group">
-                        <span class="n-search-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </span>
-                        <input type="text" id="noteSearchInput" placeholder="搜索笔记标题、内容或标签..." autocomplete="off">
+        
+        <!-- 正文 -->
+        <div class="content-container">
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
                     </div>
-                    
-                    <div id="noteSearchResults" class="n-results-panel"></div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div> -->
+
+
+            <div class="note" id="note-">
+                <div class="note-header">
+                    <div class="note-title">标题</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>日期</span>
+                        </div>
+                        <div class="note-mood">心情</div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">标签</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+
+            <div class="note" id="note-21">
+                <div class="note-header">
+                    <div class="note-title">根据《置身事内》一书对政治必修二的补充性解读</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年3月8日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">政治</a>
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">读书</a>
+                            <a href="#" class="note-tag">瞎写的别喷</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>书中第一部分谈到的是不平衡发展问题，它的解决思路虽然的确是目前我国的发展大方向，但我不敢苟同，而且跟课内关联度不高，所以跳过。</p>
+                    <p><span class="bold">六、解读之二：要素市场改革</span><br>
+                    <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+
+
+            <div class="note" id="note-20">
+                <div class="note-header">
+                    <div class="note-title">今天不读严肃文学</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年3月7日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">碎碎念</a>
+                            <a href="#" class="note-tag">读书</a>
+                            <a href="#" class="note-tag">政治</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>前天刷微博发现百妖谱终于出5了，立即下单买来看。今天不读严肃文学！</p>
+                <p>继续前文的经济小解说。正好最近在开两会诶，友谊宾馆周边都被围起来了。</p>
+                <p><span class="bold">政府投资</span>主要通过成立城投公司所为地方政府融资平台。因为政府不能直接从银行借债，所以需要通过建立专门的公司借钱投资，这类公司一般是国有独资企业，这样以来政府就有钱和渠道进行城市开发。
+                    <br><span class="bold">政府融资</span>在基础设施建设项目中也主要通过地方政府融资平台，首先是向银行借贷，其次是发行债券，即城投债。<br>此处就有人要问：地方政府为什么不用中央的拨款去投资呢？简单理解就是，中央给的钱不够。具体原因详见<a href="https://baike.baidu.com/item/%E5%88%86%E7%A8%8E%E5%88%B6%E6%94%B9%E9%9D%A9/6547055" target="_blank">分税制改革</a>。
+                    正所谓“平台”，地方政府融资平台就是一个政府流转资金的工具，这样政府才能更深入的参与到市场中去，毕竟是<span class="important">社会主义</span>市场经济体制。
+                </p>
+                <p><span class="bold">五、解读之一：建设服务型政府</span><br><span class="bold">（一）为什么要建设服务型政府？</span>首先是地方债务的问题。融资平台通过借债搞城市建设，但这种投资回报率低，收益无法覆盖债务利息支出，只能靠政府补贴。这种情况的风险在于，一旦经济遇冷，没有税收，地价下跌，政府就没钱补贴了。
+                    其次是地方官员的腐败问题，直接结果是国有资产的流失，此外，在央地关系中说过，由于考核指标问题地方官员常为求短期经济增长牺牲长期利益，不利于经济长期健康向好发展。
+                    <span class="bold">（二）如何建设服务型政府？</span>在谈“怎么做”之前我们必须搞清什么是<span class="important">服务型政府</span>。在课本中“坚持新发展理念”一课之前先提出了“以人民为中心的发展思想”，什么是“以人民为中心”？举个例子，<br><span class="quotes">出于政绩考虑，地方官员在基础投资方面偏重“看得见”的工程建设，如城市道路、地铁、桥梁、绿地等，而相对忽视“看不见”的工程，比如地下管网，所以每逢暴雨，“看海”的城市就很多。</span> 
+                    <br>以上为书中原文。对应“为什么”部分的分析，具体的应对措施分两部分展开。对地方债务治理上，实行了如推动融资平台转型，破除政府为其形成的“隐性担保”、约束银行对融资平台的放贷、问责官员、债务置换为地方政府发行的公债等一系列措施。针对腐败问题，最常听闻的应该就是党的十八大以来的反腐运动，也包括政绩考核指标的转变。总结起来就是：转变政府职能（将政府“促进经济增长”的职能转向“满足人民日益增长的美好生活需要”），深化简政放权（因为政府承担了经济发展的任务，要扮演的角色太多，支出多，积累的债务自然就多，所以要通过放权将“经济发展”的重担分摊出去，简化政府的角色），
+                    创新监管方式（针对腐败等一系列问题），增强政府公信力和执行力，建设人民满意的服务型政府。
+                </p>
+                <p>以上为微观机制解读，下面开始解读宏观现象。</p>
+                <p><span class="bold">六、解读之二：经济高质量发展</span><br>（一）转变经济发展方式，优化经济结构，深化供给侧结构性改革<br>（二）共享发展成果，实现共同富裕
+                <p><span class="bold">七、解读之三：构建以国内大循环为主体、国内国际双循环相互促进的新发展格局</span><br>写不动了留给明天。<p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+
+
+            <div class="note" id="note-19">
+                <div class="note-header">
+                    <div class="note-title">无聊</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年3月6日</span>
+                        </div>
+                        <div class="note-mood"><i class="fa-solid fa-face-meh"></i></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">碎碎念</a>
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">政治</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>最近做的四道导数题都做错了，圆曲也算得好慢<i class="fa-solid fa-face-sad-cry"></i></p>
+                <p>其实我应该去写一点化学/语文，但是我懒，我只想刷数学。（虽然也算不出来吧……</p>
+                <p>沉迷观鸟，小鸟真可爱，反复品鉴昨日拍下的动态夜师傅的视频<i class="fa-solid fa-face-grin-hearts"></i></p>
+                <p>刚才躺在床上的时候思考了一下发现数学如果圆曲算不出来，导数算不出来，新定义第二问也做不出来，根本不可能上130了……这么想来身边的某些人真是该死的脑子好使呢（绝望地嚎叫）</p>
+                <p>每天醒来的第一件事就是想睡觉。可恶我到底为什么今天早晨要喝咖啡，绝对是听Expresso听嗨了，现在想睡觉也睡不着。醒着也不知道干什么<i class="fa-solid fa-face-sad-cry"></i>
+                    哦我是否应该完善一下这个小网页，至少写一个响应式设计（每次我在这写东西的时候就会想起这件事但事实是知道现在也没有弄呢）。没有想好如果变成手机端了的话应该怎么排版，不知道把侧栏放在哪，如果是在两侧收起的话还得考虑到展开的ui，
+                    头大，不知道怎么搞。</p>
+                <p>------------------------分隔线---------------------</p>
+                <p>写点关于政治必修二中的经济政策的一些补充性解读吧，可以算是对<span class="work-name">置身事内</span>这本书的反刍。</p>
+                <p><span class="bold">一、政府和市场关系</span><br>首先必须明确，政府和市场绝对不是二元对立的关系。课本教学中政府往往通过实行宏观经济政策调控市场，似乎是政府对市场的行为做出响应，其反应<span class="important">后于</span>市场，
+                    但在实际过程中政府和市场往往是同时动态变化的，政府的资金的利用也是市场行为的一部分，两者处于一个辩证关系中。此处两者的关系可以通过矛盾的同一性和斗争性理解。</p>
+                <p><span class="bold">二、政府作为市场主体</span><br>根据必修二，政府有六个经济职能：<br>（1）实施宏观经济政策；<br>（2）市场监管；<br>（3）实施产业政策；<br>（4）提供公共服务；<br>（5）实施区域和环境政策；<br>（6）制定重大发展战略和中长期经济社会发展规划
+                    。<br>但政府在市场中扮演的角色不仅限于此。首先，政府有税收和债务作为自己的资金来源；其次，为了提供公共服务和实现经济发展目标，政府也需要通过财政支出来建设公共服务设施、投资企业等。央行如何实行货币政策已经被多次讨论了，而前文所说钱的收入和支出主要围绕财政政策，后续讨论中也将集中这一部分展开。</p>
+                <p><span class="bold">三、中央与地方关系</span><br>国务院（即中央政府）主要定“大方向”，即经济发展目标、侧重产业等宏观发展前景，而地方政府则负责将“大方向”落实为具体措施，以经济发展数据来汇报一年的工作成果。此处涉及到如何<span class="bold">“充分发挥地方政府的积极性”</span>。
+                    在此我们应该认识到，政府是由人组成的，而人的眼光往往容易局限在他所在的层级。所以中央应该考虑的是如何制定机关内的条例和奖赏措施，以便规范政府成员的履职，以及应该设立如何的衡量标准，以验收地方政府的工作成果。举个例子，地方政府在拿到预算后首先想到的大概率是“如果花这笔钱才能让上级看到我的工作成果”，
+                    对中央而言这就牵扯到两个部分——“给多少钱”以及“如何检验发展成果”。在某种程度上，过去以破坏环境为代价求短期的经济增速可以理解为，每个政府官员只任职一段时间，如果以“GDP增长率”来衡量这一时期他的工作成果的话，那就会不可避免地导致他为求短期经济增长而搁置长期环境问题，把后者留给下一任解决。
+                    自此我们就可以看出中央是如何对地方起领导作用的。其实在此处也可以思考一下为何“腐败”是政府难以克服的顽疾，或者说，“人情社会”是如何在官僚体系中起作用的。不过这两个问题过于细节在此先不展开（其实是笔者也没想明白）。</p>
+                <p><span class="bold">四、政府投融资</span><br>明天再写。这块应该就可以引出我们的主要话题之一地方政府融资平台了。前面央地关系写嗨了扯得有点多。</p>
+                <p>------------------------分隔线---------------------</p>
+                <p>找同学问题他还给我总结了方法，太靠谱了，感动<i class="fa-solid fa-face-grin-stars"></i></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+
+            
+            
+            <div class="note" id="note-18">
+                <div class="note-header">
+                    <div class="note-title">March</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年3月4日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">碎碎念</a>
+                            <a href="#" class="note-tag">读书</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>It felt like ages since I've last edited this blog, but it turns out that I've recently edidted it just two days ago. I don't know why time flow by so slow. It's like waking up and embracing another day of "not knowing what to do" and just end up reading, 
+                    'cause you don't really want to do anything more brain-comsuming than absorbing words one-sidedly. It's not that I can't do any work physically. I can optimize this little blog by adding an eventlistener on the date to prevent from mistaking by manually 
+                    typing it every time I update something, or I could do some vidoe editing, play with ae, basically, or I could go study, but it's just that I don't have the mood to do any of this. Math is cool, but chemistry sucks.
+                    I'm not suppose to be saying that. It'll only makes me more unmotivated to finish my chemistry studying plans, but the truth is that I do feel this way.
+                </p>
+                <p>Okay, so now I think I can got on going with that I'm reading. After finishing <a href="essay.html#note-15">t&t&t</a>, I've read 7 more books. The most recent one is <span class="work-name">Turtles All the Way Down</span> by John Green. Yep, another John Green book after <span class="work-name">The Fault in Our Stars</span>.
+                    It's personally to say but I like this book better since it's not that imaginative about teengage romances but also adequately <span class="important">romantic</span>. 
+                    And SPOILERS ALERT, not every YA novel ends with the protagonists in love with each other. What fascinates me most about JG's stories is how he ampliflies a common flaw of humanity (or to say specifically, puberty) into some kind of disease and constrcuts the 
+                    whole plot revolving around it. That specific cognition or apprehension or whatever weird imagination we had when we're adolescents is collective memory and somehow resonates with <span class="important">every</span> reader. 
+                    It's like having someone peering into the hideous corner of our mind and digging out all those crazy thoughts and exposing it into the sunlight. That feeling of being understood consoles us when we struggle to be in line with the others in a society that limitates individuality and advocates for unformity. 
+                </p>
+                <p>As usual, comments-while-reading below.</p>
+                </div> 
+                <div class="note-photo-container">
+                    <div class="photo">
+                        <div class="slides-wrapper">
+                            <div class="slide"><img src="./essay/cwr1.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr2.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr3.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr4.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr5.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr6.jpg"></div>
+                            <div class="slide"><img src="./essay/cwr7.jpg"></div>
+                        </div>
+                        <button class="carousel-btn carousel-prev"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                        <button class="carousel-btn carousel-next"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span><span class="carousel-indicator" data-slide="2"></span><span class="carousel-indicator" data-slide="3"></span><span class="carousel-indicator" data-slide="4"></span><span class="carousel-indicator" data-slide="5"></span><span class="carousel-indicator" data-slide="6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="note" id="note-17">
+                <div class="note-header">
+                    <div class="note-title">放假</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年2月22日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">碎碎念</a>
+                            <a href="#" class="note-tag">饮咖日记</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>人活着就是要吃很多很多的焦糖布丁。</p>
+                <p>所以死是一件不必急于求成的事。</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src="./essay/cafe1.jpg">
+                    <img src="./essay/cafe2.jpg">
+                </div>
+            </div>
+
+
+            <div class="note" id="note-16">
+                <div class="note-header">
+                    <div class="note-title">新年快乐！</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年2月18日</span>
+                        </div>
+                        <div class="note-mood"><i class="fas fa-laugh-beam"></i></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">节日祝福</a>
+                            <a href="#" class="note-tag">碎碎念</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>7号给同学带小蛋糕时，eq评价我“真乃奇女子也”。只能说很中肯了。</p>
+                <p>似乎这一年时常被他人或自己内心质问是否后悔xxx？是否后悔上rdfz、是否后悔选物理、是否后悔那天给我发消息……说到底都是因为我们觉得在作出这个选择的未来有什么“错了”。很多时候我无法坦然地对哪些问题说出不后悔，我也常常会幻想“如果当初”没有那么选择是不是会有一个更好的结局。</p>
+                <p>但很多问题在我看异国日记ep7是明了了——没有什么不会后悔的选择。</p>
+                <p>休学的主要原因之一是因为我认为自己已经“lost myself”了，但现在，虽然过程乱七八糟的，至少此时此刻，我喜欢我正在做的事。</p>
+                <p>所以，继续当一个神奇的人吧！</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src="./essay/newyear.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-15">
+                <div class="note-header">
+                    <div class="note-title">Indulged in Reading</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年2月8日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">阅读</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p><span class="work-name">Tomorrow and Tomorrow and Tomorrow</span> is <span class="important">masterpiece</span>.</p>
+                <p>If TFiOS is 7/10, then t&t&t would be a 9/10. It has this exotic perspective into human relationships that is touching and relevant today.</p>
+                <p>The citations just fit so accuratly and at the same time it pushed your boundaries of to contemplate deeper and broader into the emotional system.</p>
+                <p>Some comments and quotations below.</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img height="150" src="./essay/ttt1.jpg">
+                    <img height="150" src="./essay/ttt2.jpg">
+                    <img height="150" src="./essay/ttt3.jpg">
+                </div>
+                <div class="note-photo-container">
+                    <div class="left-column">
+                        <img src="./essay/ttt8.jpg">
+                        <img src="./essay/ttt4.jpg">
+                    </div>
+                    <img src="./essay/ttt6.jpg" class="right-photo">
+                </div>
+                <div class="note-photo-container">
+                    <img src="./essay/ttt5.jpg">
+                    <img src="./essay/ttt7.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-14">
+                <div class="note-header">
+                    <div class="note-title">书，你在掠夺我的小珍珠</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年2月2日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">阅读</a>
+                            <a href="#" class="note-tag">泪目了</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>SPOILERS ALERT FOR <span class="work-name">The Kite Runner</span>!!</p>
+                <p>Ugggh...it hurts to read stories like this. I'm considering to put off reading <span class="work-name">A Thousand Splendid Suns</span> now cause it traps you in this anguish that assimilates through your bones. </p>
+                <p>My heart twinged when Hassan got raped by Assef, but after finishing the whole book I'm just...numb. That was when all the tradegy started, maybe even ealier, when Baba had sex with that Hazara woman. Looking back, you'll just mourn how careless the days were before the winter of 1975, when the grass was still glistening green and Amir and Hassan still sat under the promegant tree talking freely. My mind just kept fleeting back to those days, just like how Amir and Sohrad shared a childhood memory alike to each other.</p>
+                <p>I <span class="important">almost</span> cried when Baba died. My eyes was <span class="important">literally</span> with tears, but I held on to it since by that time I was reading in public. You see a <span class="important">valiant</span> man wilted into a ill-strickened elder, someone clenching on to his pride in the most desperate times of his life of his life now resigning to aging. All you can do is accept with your heart wrentched in reluctancy. </p>
+                <p>And Hassan...God I don't even want to recall that. A shot of a gun, and then blood went blasting. How light does his live weigh? And how heavy does his loyal heart? It's suffocating.</p>
+                <p>Too immersive to walk myself out.</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+
+            <div class="note" id="note-13">
+                <div class="note-header">
+                    <div class="note-title">Random Poetry Composition</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月31日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">诗歌</a>
+                            <a href="#" class="note-tag">瞎写的别喷</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>I found myself straying in the garden.<br>Rosemary thistles intertwined amongst where spring has rotten.<br>Mint, as its scent stings my nostrils,<br>Heaved its fiber wings, trembling through the ordeal. <br>Through thy soul warm beam withers,<br>And in bleak barren mine chars into ember. <br>May her footsteps lead her afar, <br>For behind every fresh ornament underlies a ghosting scar. </p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+            
+            <div class="note" id="note-12">
+                <div class="note-header">
+                    <div class="note-title">abt献给阿尔吉侬的花束</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月30日</span>
+                        </div>
+                        <div class="note-mood"><i class="fas fa-face-sad-cry"></i></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">阅读</a>
+                            <a href="#" class="note-tag">泪目了</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>果然好哭。心理压抑但又哭不出来的时候就需要这种催化剂来释放压力。</p>
+                <p>从查理回去看他妈妈那段我就想哭，可惜眼泪已经流干了所以只能纯心痛。之前他发现手术在提高智商的同时会带来心智发展滞后的问题，但退化的倒计时又碾着他去在依旧高智商的时候去向家人展示这一面，去挖掘自己的童年经历。这个过程在某种程度上促进了他的心智成熟，他拥有了作为一个人而言的有关家庭的情感体验。</p>
+                <p>但也会想，如果你的家庭只会在你是一个正常人的情况下接纳你，那以正常人身份的和解总是别扭的、缺乏信任感的。</p>
+                <p class="quotes">“这些年的梦魇已经够痛苦了，我只想看到她微笑，并知道我才是能让她快乐的人。在我的生命中，我第一次让她的嘴唇绽开笑容。”</p>
+                <p class="quotes">“我要你留下一份报告，这样你就可以告诉别人，你儿子其实不是笨蛋。”</p>
+                <p>童年的受虐经历致使查理以一种卑微地姿态恳求接纳。（这是否可以与他对会场中的科学家的傲慢做对比……？）然而对方什么也不记得了。那些萦绕在你睡梦中多年的噩梦早已变成对方茶余饭后的闲聊话题，只有母亲举起刀时的应激反应留存着过去存在过的痕迹，但妹妹说她疯了。到最后你发现，你所怨恨的只是一个空对象，你只能释然了，你被迫释然了。</p>
+                <p>查理智力退化的那一段终于是让我心痛到挤出眼泪了，从进步报告里出现第一个错别字开始我就蚌埠住了。莫名的非常能共情这种眼睁睁看着自己丧失学习能力的无力感。</p>
+                <p class="quotes">“拜托……拜托不……不要让我忘记怎么读和写……”</p>
+                <p>为什么面包店的人在查理变会白痴后又将他当朋友了呢？不再是捉弄嘲笑，而是真心实意的朋友。</p>
+                <p class="quotes">“还有：如果你有机会请放一些花在后院的阿尔吉侬坟上。”</p><br>给阿尔吉侬献花吧，它已经从迷宫中逃出去了。</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=>
+                </div>
+            </div>
+            
+            <div class="note" id="note-11">
+                <div class="note-header">
+                    <div class="note-title">学习d#4</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月19日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">笔记</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>不用参加期末考试到底是幸运还是失落呢。</p>
+                <p>早晨起来赶作业，周末还是玩得太疯了。最近搬到朝阳这边住了，应该会开启一部分探店计划，主要是集中在望京吧。</p>
+                <p>来到朝阳的第一件事就是早上点小面包的外卖，出品果然可靠<i class="fas fa-face-sad-cry"></i></p>
+                <p>9页物理题做了近3个小时，认真分析了一下还是建模不够熟练，该刷题。</p>
+                <p>今天的物理作业有13页，还得写高三刚考完的语文卷，要死人了啊啊啊啊</p>
+                <p>每当要做的事太多时就会想拼死命，对于习惯性认真做事的人来讲，不努力也是一件很难的事。改变思维方式很难，但能改变思维方式的人很nb，拼死命做事谁都会，那只是条捷径，我只是在逃避，选择那条更简单的路。<a href="https://bgm.tv/subject/147068" target="_blank" class="work-name">三月的狮子</a>中香子指着比自己更成功的“外来者”零说：“努力难道不也是一种天赋吗”，当时好像有什么击中了我，但现在我又mygo了。</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src=./essay/study8.jpg>
+                </div>
+            </div>
+            
+            <div class="note" id="note-10">
+                <div class="note-header">
+                    <div class="note-title">学习#d3</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月16日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">笔记</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>早上5:33就醒了，辗转反侧到快8:00才爬起来补作业。今早我将奖励自己吃德南面包房的提拉米苏！酒味很香且浸润得足够充分，值得一吃。每个早晨想吃面包/甜点却发现店家没开门/想吃的没出炉是最难受的。btw麦的枫糖松饼怎么下架了啊TT早晨吃点甜甜的热乎的东西真的会让人一天都开心的</p>
+                <p>在9:11把作业写完了，太成功了</p>
+                <p>下午3:00多到图书馆，一直在写摘抄，不想写理科了，干点不费脑子的活。忙起来很舒服。</p>
+                <p>明天休息。</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src="./essay/study7.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-9">
+                <div class="note-header">
+                    <div class="note-title">学习#d2</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月15日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">笔记</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>早上起来列了to-do list(finally)，但睡前发现一项也没完成。</p>
+                <p>上午上完物理课就和出去参加聚餐了。一桌三个家庭，每个家庭的孩子都需要心理医生，为什么会这样呢？又想起了<span class="work-name">《要有光》</span>中的<span class="work-name">京城篇</span>中的内容，当纪实文学真的变成触手可及的现实时反而会不再那么触目惊心。</p>
+                <p>下午和中午一起吃饭校友在圆明园的冰场划了冰再小逛了一会儿，看见了好多鸟和黑天鹅幼崽们（如p4）。我们是根据小红书上的帖子找过去的，去的时候发现比原帖少了一只小鹅，喂鹅的大姐证实了心中的猜疑：它死了。又是一条没能挨过冬季的生命。</p>
+                <p>晚上7:15到的图书馆，9:30左右就走了，物理作业都没写完，不想写了，撤！</p>
+                <p>学习的时候总觉得吃饭很耽误时间，所以中午很少去食堂吃饭，今天突然创新性地想到高三中午懒得吃饭可以喝安素，又方便又省时又营养全面，那些衡水模式的中学天天压缩吃饭时间到10分钟，不如每顿发400ml安素，边喝边学一点不耽误。</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src="./essay/study3.jpg">
+                    <img src="./essay/study4.jpg">
+                </div>
+                <div class="note-photo-container">
+                    <img src="./essay/study5.jpg">
+                    <img src="./essay/study6.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-8">
+                <div class="note-header">
+                    <div class="note-title">总之就是又开始学习了</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月14日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">学习</a>
+                            <a href="#" class="note-tag">笔记</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>不知到为什么但第一个开始学的其实是物理……太糟糕了这科学得有点！</p>
+                <p>1:12p.m. 在写物理的间隙久违的动笔写了化学的期中卷，被治愈了，化学我们喜欢你</p>
+                <p>1:14p.m. 写作业 听歌</p>
+                <p>1:25p.m. 之前我是怎么上得下去学的啊，上学好累——TTTT</p>
+                <p>1:44p.m. 我得了一学习就想睡觉的病//继续写化学！！</p>
+                <p>1:48p.m. 已经不记得乙醇长什么样了[broken]</p>
+                <p>1:50p.m. 酚可以与氢氧化钠反应吗？艹又忘了</p>
+                <p>1:54p.m. Gemini说可以。</p>
+                <p>3:19p.m. 炸裂了，我怎么还得做作业，ughhhh</p>
+                <p>3:20p.m. 看点小说抚慰人心后就出发去图书馆写作业，顺便写点to-do list吧</p>
+                <p>5:05p.m. 抵达图书馆，常坐的座位没有人，嘿嘿开心</p>
+                <p>5:21p.m. 不想评价</p>
+                <p>5:49p.m. 我真服了，对面在哪电脑做什么激烈的运动，搞得整个桌子都在晃</p>
+                <p>10:06p.m. 嘿嘿回家了，开心。你问我为什么6:00之后就没吐槽了？哦，因为六点之后我就没有在写物理了。</p>
+                </div> 
+                <div class="note-photo-container">
+                    <img src="./essay/study1.jpg">
+                    <img src="./essay/study2.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-7">
+                <div class="note-header">
+                    <div class="note-title">好用的ae插件</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2026年1月7日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">分享</a>
+                            <a href="#" class="note-tag">剪辑</a>
+                            <a href="#" class="note-tag">插件</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p><a href="https://aescripts.com/after-effects/automation/flow/?srsltid=AfmBOooC2YSdKhSNh-yuBQlKKU4Kf713Uu0fbSzSf2UpimfP3iBq1vyg">Flow</a>，一款拯救拉曲线苦手的好插件。</p>
+                <p>将ae在时间轴面板中显示的图标编辑器单独开了一个面板，很好解决了缩放不准导致无法看全曲线的问题（如p1）。</p>
+                <p>还有默认的曲线方程可以直接应用，完美解决了拉曲线苦手（e.g.我）拉不出自己想要的效果的问题。选中关键帧，拉曲线，点击应用就行。还可以存预设，如缓入缓出（如p2）。</p>
+                <p>应该算是ae庞杂的插件系统中功能简单且很好上手的一个了，而且占内存小所以很好带，可惜近期才发现。</p>
+                <p>下次有时间吐槽一下bcc和particular这两个天天把我ae搞崩的罪魁祸首。</p>
+                </div> 
+                <div class="note-photo-container">
+                </div>
+            </div>
+
+            <div class="note" id="note-6">
+                <div class="note-header">
+                    <div class="note-title">个人2025年度原画师——</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年12月21日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">作画</a>
+                            <a href="#" class="note-tag">2025年终盘点</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>中井杏(X: <a href="https://x.com/KoroB_Greey86">@ころぼん</a>)！！！</p>
+                <p>04年的天才美少女原画师，在<span class="work-name">琉璃的宝石</span>中的演技卡表现堪称惊艳，之前在同为藤井监督负责的<span class="work-name">别当哥</span>里也有出色的表现。</p>
+                <p>荣誉提名：藤本航己</p>
+                <p>在《电锯人：蕾塞篇》中无论是战斗或演技都有贡献出质量稳定的卡，但考虑到本作作画资源溢出，且考虑到藤本航己在23年的<span class="work-name">芙丽莲</span>中表现更为出色（指菲伦坐下那一卡），姑且只给一个荣誉提名。</p>
+                </div> 
+            </div>
+
+            <div class="note" id="note-5">
+                <div class="note-header">
+                    <div class="note-title">Some Interpretions on The Catcher in the Rye</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年12月16日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">青春</a>
+                            <a href="#" class="note-tag">意识流</a>
+                            <a href="#" class="note-tag">书评</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p class="quotes">"Anyway, I see such a picture: all these little kids are playing some game in this big field of rye and all. Thousands of little kids, and nobody's around - nobody big, I mean - except me. And I'm standing on the edge of some crazy cliff. And my job is to catch everybody if they start to go over the cliff - I mean if they're running and they don't look where they're going. I come out from somewhere and catch them. That's all I'd like to do all day. I'd just like to be the catcher in the rye and all. I know it's crazy, but that's the only thing I'd really like to be.”</p>
+                <p>This might be the most classic paragraph of this book. When the protagonist Houlden Caulfield compares himself to a catcher, catching the kids from falling down the cliff. But what's under the cliff? Many poeple interpret it as "adulthood", but that's such an obscure concept, too one-sided to generalize the sophisticated social problem in mordern society reaching out to even now.</p>
+                <p>Let's start with the historical background of this novel. Taken place in 1949, it reflects the social appearance of America after World War II, when the boom in economy brought abundance in personal assets, but as cultural development falls behind, people started to suffer in vain. In opposite to the properity in economy, the society's spirits remained absent. "Snobbery, privilege, class injury, culture as a badge of superiority, sexual exploitation, education subordinated to status, warped social feeling, competitiveness, stunted human possibility, the list could go on." Through the observation and reflection of Houlden, the books reaveals the inner contradiction of the bourgeois society. Bills were draining up people's spirits. Houlden professed himeself as a liar, fabricating all his past experiences infront of Sunny, but <span class="important">truth</span> was what he really craved for, sincere emotions, genuine expressions. Sourrounded in a world of "phoney" people, he wrapped himself up in falsehood due to the fear of being misunderstood, being abnormal, of needing a psychoanalyst. And only with Pheobe could he unload his armors and reveal the long-hidden, indistinctive, vulnerable true self. Dancing, crying, leaving his red hunting hat to her. That's the problem with modernity.</p>
+                <p>It so hard to specifize <span class="important">Catcher</span>'s interpretion on one topic - it's a 16-year-old's turblulent adolescence. Every puberant's growing sessions reflects the structural issues of the period, and the latter is uncountable. Though <span class="important">Catcher</span> is widely classified as a coming-of-age novel, but did Houlden really grew out of this paradox? No. He narrates the story in a psycho ward. The problem remained unsolved. That's the bewilderment of everyone who remains comtemplative. Our minds wrestle to stay afloat in the void of indifference. Where will the ducks in the central park go in winter? Only silence remains.</p>
+                </div> 
+            </div>
+
+            <div class="note" id="note-4">
+                <div class="note-header">
+                    <div class="note-title">可能要跟哲学过一辈子了……</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年12月5日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">哲学</a>
+                            <a href="#" class="note-tag">碎碎念</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>突然发现自己的哲学研究之路意外地标准。</p>
+                <p>初三的时候痴迷于古希腊哲学和中世纪宗教哲学，再带点文艺复兴，先是看各种导论和课程，高一懂得深了些遍补上了《理想国》；高一研究近代哲学，由笛卡尔对知识确定性的质疑引出的长达两个世纪的理性论和经验论的争执，Lebniz、Locke、Spinoza、Berkeley直到休谟提出怀疑论让大家意识到：”不行这个话题聊不下去了“。</p>
+                <p>已经不记得是什么时候认识的康德了，只记得高一下某个大考时一直没有想明白的一个问题，在考完的下午坐在学校旁的书店读纯批的时候豁然开朗了。可能是随着政治开始讲必修四，把德国古典哲学过完了，发现自己对黑格尔、谢琳、
+                费希特这三位的兴趣不大，可能也在政治组的推动下去看了些马哲相关内容，本雅明（空想社会主义？）、福克斯（经济）、毛选（显然这是马哲的中国化了）。穿插在这个过程中的是对后黑格尔时代哲学的学习，这时候事情开始乱起来了。
+                拜读了维特根斯坦的《逻辑哲学论》后发现以自己目前的理解能力根本搞不明白这个哥们儿在说什么；现象学算是感兴趣也钻得比较深的，从胡塞尔到海德格尔，并深深爱慕着后者；由此又研究起存在主义，萨特和加缪的理论体系并不
+                算庞杂，所以只能算是辅料，为什么当时没读尼采呢？可能觉得他太神经病了读了不利于心理健康吧。不过前段时间又拿起他了，果然人在心境相同时才能共情。</p>
+                <p>什么时候能读到福柯、边沁甚至齐泽克呢？什么时候能真正学点德语而不是只守着absoluter geist这种词来装x呢？这还只是浅层了解，深入研究的话，估计一生都不能完全了解一个哲学家吧。</p>
+                </div> 
+            </div>
+
+            <div class="note" id="note-3">
+                <div class="note-header">
+                    <div class="note-title">abt地下室手记</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年11月19日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">陀翁</a>
+                            <a href="#" class="note-tag">阅读</a>
+                            <a href="#" class="note-tag">书评</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>真的看哭了……</p>
+                <p>在自我矛盾和纠结中个体的内心世界残忍地被撕裂，似乎能听到血肉分离的声音，既高尚又卑鄙，挣扎着又堕落着，伸手去触摸理想主义的光辉，又被芸芸众生所埋没。</p>
+                <p class="quotes">“他们不让我……我没法做一个……好人！”</p>
+                <p class="quotes">“廉价的幸福好呢，还是崇高的痛苦好？”</p>
+                <p>第一本陀翁，以后会有更多的。</p>
+                </div> 
+            </div>
+
+            <div class="note" id="note-2">
+                <div class="note-header">
+                    <div class="note-title">来点abt作画的小作文</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年11月18日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">动画</a>
+                            <a href="#" class="note-tag">国漫</a>
+                            <a href="#" class="note-tag">作画</a>
+                            <a href="#" class="note-tag">小作文</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>看了<a href="https://www.bilibili.com/video/BV1HiUWBdES7/">【“闪击流石”为什么是近年最神的一场戏？《罗小黑》被低估的艺术丨万字拉片《罗小黑战记2》01】</a>后随便记录一些关于罗小黑打戏的思考。</p>
+                    <p>视频里从“镜头语言”的角度分析的已经很清楚了，文本、节奏、分镜等等，但对于动画这一载体而言还是有必要把作画单独拎出来分析以下的。</p>
+                    <p>总体而言罗小黑的作画很“合规”，甚至有些一板一眼（非贬义）。以打戏为例，画面张力常通过镜头运动（如甩镜头/旋转镜头）、构图倾斜（如斜向构图）、透视畸变（如广角时四周画面的拉伸）等外在手法去体现，而非在人物本身上作文章（见p1/p2）。人设上用突出的勾线和大面积的色块展现明暗层次和体积感，既便于刻画运动状态，也与精细且投射了柔光的背景建模作对比，使人物“跃然于纸上”。</p>
+                    <p>至于为什么要如此处理打戏，可以给出几个猜测。一，迎合市场需求，强调镜头运动本身就是在模仿相机拍摄赋予动画电影一种“镜头感”，让看惯了真人/3D的观众迅速适应2D动画的演出形式。二，统一作画风格，毕竟国内2D动画产业并非成熟，不可能把一部商业电影当作各路原画师们大显身手的媒介。从某种程度上来讲这也是为了迎合市场。不过就分镜设计难度来讲这种方式对于监督/演出的要求极高，而在此不得不佩服mtjj的分镜水平，无论是动作、武器、背景、发生顺序等都展现得很简明清晰，所以哥们儿你还是专心做动画吧!!</p>
+                </div>
+                <div class="note-photo-container">
+                    <img src="./essay/sakuga1.jpg">
+                    <img src="./essay/sakuga2.jpg">
+                </div>
+            </div>
+
+            <div class="note" id="note-1">
+                <div class="note-header">
+                    <div class="note-title">The Fault in Our Stars</div>
+                    <div class="note-info">
+                        <div class="note-date">
+                            <span class="date-icon"></span>
+                            <span>2025年11月8日</span>
+                        </div>
+                        <div class="note-mood"></div>
+                        <div class="note-tags">
+                            <a href="#" class="note-tag">YA-novels</a>
+                            <a href="#" class="note-tag">书评</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-content">
+                <p>Remember reading a sample chapter on my kindle several years ago. Now finally picking up the whole story.</p>
+                <p>I really like how TFiOS is neatly structured through the callbacks of ordinary details hidden in daily interactions and how they thumps like ferocious thunder at specific moments. e.g. <span class="work-name">“And you said you don’t write poetry.”</span></p>
+                <p>I have to admit that there are limitations of teenage love stories: the boy has to be hot and sporty, the popular guy in school. But there’s also something that only YA novels can encompass: the unrealistic wonders of love. Hazel could started off randomly talking about the universe and infinity pretentiously and ends the topics on how perpetual their love is. With a fragmented life, people tend to think about these philosophical topics. They goes beyond bickering over the repetitive everyday life, because what seems unreachable to us is within inches to them (by this, I mean death). </p>
+                <p>I know it’s been highly recommended for its unique but authentic inspect into the life of cancer patients. Their depression, their struggles, and sarcasm on how the world commemorates them through their own aspect. So, I not going to talk more about this. </p>
+                <p>Though entitled The Fault in Our Stars, I would assume it is a simplified version. If I were to find an alternative for "fault", it would be <span class="important">hamartia</span>, and for “stars”, it would be <span class="important">universe</span>. </p>
+                <p></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 右栏 -->
+        <div class="right-bar">
+            <!-- 近期更新 -->
+            <div class="right-bar-update">
+                <span class="bar-title-right">近期更新</span>
+                <ul>
+                    <li>
+                        <a href="essay.html#note-20">今天不读严肃文学</a>
+                        <span class="small">2026.3.7</span>
+                    </li>
+                    <li>
+                        <a href="essay.html#note-19">无聊</a>
+                        <span class="small">2026.3.6</span>
+                    </li>
+                    <li>
+                        <a href="essay.html#note-18">March</a>
+                        <span class="small">2026.3.4</span>
+                    </li>
+                    <li>
+                        <a href="gallery.html#travel-shanghai">相册>旅游>上海</a>
+                        <span class="small">2026.3.2</span>
+                    </li>
+                    <li>
+                        <a href="essay.html#note-17">放假</a>
+                        <span class="small">2026.2.22</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 搜索 -->
+            <div class="right-bar-search">
+                <div class="n-search-area">
+                    <div class="n-search-box">
+                        <div class="n-search-input-group">
+                            <span class="n-search-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </span>
+                            <input type="text" id="noteSearchInput" placeholder="搜索笔记标题、内容或标签..." autocomplete="off">
+                        </div>
+                        
+                        <div id="noteSearchResults" class="n-results-panel"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 收起目录 -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggle-btn');
+            const leftBar = document.getElementById('leftBar');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            // 切换侧边栏状态的函数
+            function toggleSidebar() {
+                toggleBtn.classList.toggle('active');
+                leftBar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                
+                // 防止背景滚动
+                if (leftBar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+
+            // 点击按钮切换
+            toggleBtn.addEventListener('click', toggleSidebar);
+
+            // 点击遮罩层收起
+            overlay.addEventListener('click', toggleSidebar);
+
+            // 目录项点击后自动收起（方便用户跳转）
+            const dirLinks = document.querySelectorAll('.left-bar a');
+            dirLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+        });
+     </script>
+
+    <!-- 标签查找 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tags = document.querySelectorAll('.note-tag')
+        const searchInput = document.getElementById('noteSearchInput')
+        tags.forEach (tag => {
+            tag.addEventListener('click', function () {
+                let tagName = this.innerText.replace('#', '').trim();
+                if (searchInput) {
+                    searchInput.value=tagName
+                    const event = new Event('input', { bubbles: true });
+                    searchInput.dispatchEvent(event);
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    searchInput.focus
+                }
+            });
+        });
+    });
+    </script>
+
+    <!-- 图片轮播 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const posts = document.querySelectorAll('.note-photo-container');
+
+        posts.forEach((post) => {
+            const wrapper = post.querySelector('.slides-wrapper');
+            const slides = post.querySelectorAll('.slide');
+            const prevBtn = post.querySelector('.carousel-prev');
+            const nextBtn = post.querySelector('.carousel-next');
+            const indicators = post.querySelectorAll('.carousel-indicator');
+
+            if (!wrapper || !prevBtn || !nextBtn) {
+                console.warn('某个帖子缺少轮播组件，已跳过：', post);
+                return; 
+            }
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            if (totalSlides === 0) return;
+
+            function updateCarousel() {
+                wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                indicators.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // 防止某些浏览器的默认行为
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        });
+    });
+    </script>
 
     <!-- 目录高亮 -->
     <script>
