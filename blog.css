@@ -1542,6 +1542,7 @@ a:hover {
     }
 
     .title {
+        font-size: 0.8em;
         padding: 10px 2.5vw;
     }
 
@@ -1569,6 +1570,10 @@ a:hover {
 
     .toggle-btn {
         display: block flex;
+    }
+
+    .page-content {
+        font-size: 0.8em;
     }
 
     .left-bar {
