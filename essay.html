@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="全图">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            // 监听所有笔记里的图片点击
+            document.querySelectorAll('.note-photo-container img').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation(); // 防止触发其他点击事件
+                    lightboxImg.src = this.src; // 将缩略图地址传给大图
+                    lightbox.style.display = 'flex'; // 显示弹窗
+                });
+            });
+        });
+    </script>
     <!-- 导航栏 -->
     <ul class="nav">
         <li><a href="#" id="firstVisit" class="title">初次来访？</a></li>
@@ -432,7 +451,7 @@
                     </div>
                 </div>
                 <div class="note-content">
-                <p></p>
+                <p>测试帖</p>
                 </div> 
                 <div class="note-photo-container">
                     <img src=>
@@ -460,9 +479,6 @@
                     <p>书中第一部分谈到的是不平衡发展问题，它的解决思路虽然的确是目前我国的发展大方向，但我不敢苟同，而且跟课内关联度不高，所以跳过。</p>
                     <p><span class="bold">六、解读之二：要素市场改革</span><br>
                     <p></p>
-                </div> 
-                <div class="note-photo-container">
-                    <img src=>
                 </div>
             </div>
 
@@ -499,9 +515,6 @@
                 <p>以上为微观机制解读，下面开始解读宏观现象。</p>
                 <p><span class="bold">六、解读之二：经济高质量发展</span><br>（一）转变经济发展方式，优化经济结构，深化供给侧结构性改革<br>（二）共享发展成果，实现共同富裕
                 <p><span class="bold">七、解读之三：构建以国内大循环为主体、国内国际双循环相互促进的新发展格局</span><br>写不动了留给明天。<p>
-                </div> 
-                <div class="note-photo-container">
-                    <img src=>
                 </div>
             </div>
 
@@ -544,9 +557,6 @@
                 <p>------------------------分隔线---------------------</p>
                 <p>找同学问题他还给我总结了方法，太靠谱了，感动<i class="fa-solid fa-face-grin-stars"></i></p>
                 </div> 
-                <div class="note-photo-container">
-                    <img src=>
-                </div>
             </div>
 
             
@@ -720,9 +730,6 @@
                 <p>And Hassan...God I don't even want to recall that. A shot of a gun, and then blood went blasting. How light does his live weigh? And how heavy does his loyal heart? It's suffocating.</p>
                 <p>Too immersive to walk myself out.</p>
                 </div> 
-                <div class="note-photo-container">
-                    <img src=>
-                </div>
             </div>
 
             <div class="note" id="note-13">
@@ -743,9 +750,6 @@
                 <div class="note-content">
                 <p>I found myself straying in the garden.<br>Rosemary thistles intertwined amongst where spring has rotten.<br>Mint, as its scent stings my nostrils,<br>Heaved its fiber wings, trembling through the ordeal. <br>Through thy soul warm beam withers,<br>And in bleak barren mine chars into ember. <br>May her footsteps lead her afar, <br>For behind every fresh ornament underlies a ghosting scar. </p>
                 </div> 
-                <div class="note-photo-container">
-                    <img src=>
-                </div>
             </div>
             
             <div class="note" id="note-12">
@@ -775,9 +779,6 @@
                 <p>为什么面包店的人在查理变会白痴后又将他当朋友了呢？不再是捉弄嘲笑，而是真心实意的朋友。</p>
                 <p class="quotes">“还有：如果你有机会请放一些花在后院的阿尔吉侬坟上。”</p><br>给阿尔吉侬献花吧，它已经从迷宫中逃出去了。</p>
                 </div> 
-                <div class="note-photo-container">
-                    <img src=>
-                </div>
             </div>
             
             <div class="note" id="note-11">
@@ -930,8 +931,6 @@
                 <p>应该算是ae庞杂的插件系统中功能简单且很好上手的一个了，而且占内存小所以很好带，可惜近期才发现。</p>
                 <p>下次有时间吐槽一下bcc和particular这两个天天把我ae搞崩的罪魁祸首。</p>
                 </div> 
-                <div class="note-photo-container">
-                </div>
             </div>
 
             <div class="note" id="note-6">

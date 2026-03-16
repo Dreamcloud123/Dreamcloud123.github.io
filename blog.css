@@ -61,6 +61,27 @@ a:hover {
     padding-right: 40px;
 }
 
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 20000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* 核心：全屏显示时保留原图比例，不裁剪 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
 /* 主页 */
 .main {
     display: flex;
@@ -569,25 +590,26 @@ a:hover {
 
 /* 1. 图片容器：允许换行并限制最大宽度 */
 .note-photo-container {
-    display: flex !important;
-    flex-wrap: wrap;          /* 核心：如果一行放不下，自动换到下一行 */
-    gap: 10px;                /* 照片之间的间距 */
-    width: 100%;              /* 占满 note 的宽度 */
-    max-width: 100%;          /* 严禁超出父元素 */
-    box-sizing: border-box;
+    display: grid; /* 改用网格布局，比 flex 更像朋友圈 */
+    grid-template-columns: repeat(3, 1fr); /* 默认三列 */
+    gap: 8px;
+    width: 100%;
     margin-top: 15px;
-    justify-content: flex-start; /* 照片靠左对齐 */
+}
+
+.note-photo-container:has(img:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 300px; /* 单图不宜过大 */
 }
 
 /* 2. 容器内的图片：自适应宽度 */
 .note-photo-container img {
-    /* 这里的 30% 代表一行约排 3 张，减去 gap 的空间 */
-    flex: 0 0 calc(33.33% - 10px); 
-    width: 100%;              /* 配合 flex 基础宽度 */
-    height: 200px;            /* 固定高度，保证排列整齐 */
-    object-fit: cover;        /* 核心：裁剪图片以填满方块，不变形 */
-    border-radius: 8px;       /* 圆角（可选） */
-    transition: transform 0.3s ease;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 核心：强制宽高比为 1:1 正方形 */
+    object-fit: cover;   /* 居中裁剪，不拉伸 */
+    border-radius: 4px;
+    cursor: zoom-in;     /* 鼠标悬停显示放大镜图标 */
+    transition: opacity 0.2s;
 }
 
 /* 3. 鼠标悬停效果（可选） */
