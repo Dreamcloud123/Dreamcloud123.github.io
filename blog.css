@@ -568,9 +568,10 @@ a:hover {
 }
 
 .note-photo-container {
+    object-fit: contain;
     display: flex;
     gap: 10px;
-    width: 100%;
+    max-width: 80%;
     align-items: stretch;
     margin-top: 10px;
 }
@@ -580,8 +581,9 @@ a:hover {
 }
 
 .note-photo-container img {
-    object-fit: cover;
-    max-width: 300px;
+    object-fit: contain;
+    max-width: 45%;
+    height: fit-content;
     margin-right: 10px;
 }
 
