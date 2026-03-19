@@ -388,6 +388,8 @@ a:hover {
     position: sticky;
     padding: 20px 10px;
     margin-bottom: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .left-bar > ul > li > a {
@@ -443,7 +445,7 @@ a:hover {
     position: relative;
 }
 
-.left-bar ul ul li a, .right-bar-update ul li a {
+.left-bar a, .right-bar-update a {
     text-decoration: none;
     color: #584738;
     display: block;
@@ -453,14 +455,14 @@ a:hover {
     font-size: 0.95rem;
 }
         
-.left-bar ul ul li a:hover {
+.left-bar a:hover {
     background-color: #e8dfd3;
     color: #333;
     transform: translateX(2px);
     margin-right: 25px;
 }
         
-.left-bar ul ul li a.active {
+.left-bar .active {
     background-color: #584738;
     color: white;
     margin-right: 13px;
@@ -559,14 +561,17 @@ a:hover {
     box-sizing: border-box; 
     min-width: 0;
     flex: 1 17 55%;
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
 .note {
     background-color: #fbf7f1;
     border-radius: 15px;
-    padding: 20px 30px;
-    margin-bottom: 30px;
-    scroll-margin-top: 120px;
+    padding: 20px;
+    margin-bottom: 20px;
+    scroll-margin-top: 40px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* 增加平滑过渡动画 */
 }
 
 .note-header {
