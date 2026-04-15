@@ -8,6 +8,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. 获取容器和链接
+            const scrollContainer = document.querySelector('.content-container');
+            const directoryLinks = document.querySelectorAll('.left-bar a');
+
+            directoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 获取 href 中的 ID (例如 "note-29")
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetNote = document.getElementById(targetId);
+
+                    if (targetNote && scrollContainer) {
+                        // 阻止默认跳转（防止瞬间跳动，改为平滑滚动）
+                        e.preventDefault();
+
+                        // --- A. 计算滚动位置 ---
+                        const containerRect = scrollContainer.getBoundingClientRect();
+                        const noteRect = targetNote.getBoundingClientRect();
+                        const relativeTop = noteRect.top - containerRect.top;
+                        
+                        scrollContainer.scrollBy({
+                            top: relativeTop - 20, // 20 为顶部留白
+                            behavior: 'smooth'
+                        });
+
+                        // --- B. 施加高亮效果 ---
+                        // 重置其他笔记样式
+                        document.querySelectorAll('.note').forEach(n => {
+                            n.style.transition = 'all 0.5s ease';
+                            n.style.borderColor = '#eee';
+                            n.style.boxShadow = 'none';
+                            n.style.transform = 'scale(1)';
+                        });
+
+                        // 目标笔记高亮
+                        targetNote.style.borderColor = '#584738';
+                        targetNote.style.boxShadow = '0 0 20px rgba(88, 71, 56, 0.2)';
+                        targetNote.style.transform = 'scale(1.01)';
+
+                        // --- C. 自动恢复 ---
+                        setTimeout(() => {
+                            targetNote.style.borderColor = '#eee';
+                            targetNote.style.boxShadow = 'none';
+                            targetNote.style.transform = 'scale(1)';
+                        }, 2500);
+
+                        // --- D. 移动端收起菜单 (根据你 HTML 中的 ID 修正) ---
+                        const leftBar = document.getElementById('leftBar');
+                        const toggleBtn = document.getElementById('toggle-btn');
+                        if (leftBar && leftBar.classList.contains('active')) {
+                            leftBar.classList.remove('active');
+                            if (toggleBtn) toggleBtn.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
         <img id="lightbox-img" src="" alt="全图">
     </div>
@@ -118,53 +177,53 @@
             <ul><span class="bar-title">目录</span>
                 <li><span class="column-date">2026.4</span>
                     <ul>
-                        <li><a href="#note-29" onclick="highlightLink(this)">每到周三就燃尽了</a></li>
-                        <li><a href="#note-28" onclick="highlightLink(this)">周记#1</a></li>
-                        <li><a href="#note-27" onclick="highlightLink(this)">幸好朋友圈内的技术宅不多</a></li>
-                        <li><a href="#note-26" onclick="highlightLink(this)">abt芙莉莲s2ep8</a></li>
+                        <li><a href="#note-29">每到周三就燃尽了</a></li>
+                        <li><a href="#note-28">周记#1</a></li>
+                        <li><a href="#note-27">幸好朋友圈内的技术宅不多</a></li>
+                        <li><a href="#note-26">abt芙莉莲s2ep8</a></li>
                     </ul>
                 <li><span class="column-date">2026.3</span>
                     <ul>
-                        <li><a href="#note-25" onclick="highlightLink(this)">伊通河南溪湿地公园段</a></li>
-                        <li><a href="#note-24" onclick="highlightLink(this)">净月潭观鸟</a></li>
-                        <li><a href="#note-23" onclick="highlightLink(this)">长春，一个没有共享单车的城市</a></li>
-                        <li><a href="#note-22" onclick="highlightLink(this)">在无聊的生活中捞起美好的鱼</a></li>
-                        <li><a href="#note-20" onclick="highlightLink(this)">今天不读严肃文学</a></li>
-                        <li><a href="#note-19" onclick="highlightLink(this)">无聊</a></li>
-                        <li><a href="#note-18" onclick="highlightLink(this)">March</a></li>
+                        <li><a href="#note-25">伊通河南溪湿地公园段</a></li>
+                        <li><a href="#note-24">净月潭观鸟</a></li>
+                        <li><a href="#note-23">长春，一个没有共享单车的城市</a></li>
+                        <li><a href="#note-22">在无聊的生活中捞起美好的鱼</a></li>
+                        <li><a href="#note-20">今天不读严肃文学</a></li>
+                        <li><a href="#note-19">无聊</a></li>
+                        <li><a href="#note-18">March</a></li>
                     </ul>
                 </li>
                 <li><span class="column-date">2026.2</span>
                     <ul>
-                        <li><a href="#note-17" onclick="highlightLink(this)">放假</a></li>
-                        <li><a href="#note-16" onclick="highlightLink(this)">新年快乐！</a></li>
-                        <li><a href="#note-15" onclick="highlightLink(this)">Indulged in Reading</a></li>
-                        <li><a href="#note-14" onclick="highlightLink(this)">书，你在掠夺我的小珍珠</a></li>
+                        <li><a href="#note-17">放假</a></li>
+                        <li><a href="#note-16">新年快乐！</a></li>
+                        <li><a href="#note-15">Indulged in Reading</a></li>
+                        <li><a href="#note-14">书，你在掠夺我的小珍珠</a></li>
                     </ul>
                 </li>
                 <li><span class="column-date">2026.1</span>
                     <ul>
-                        <li><a href="#note-13" onclick="highlightLink(this)">Random Poetry Composition</a></li>
-                        <li><a href="#note-12" onclick="highlightLink(this)">abt献给阿尔吉侬的花束</a></li>
-                        <li><a href="#note-11" onclick="highlightLink(this)">学习#d4</a></li>
-                        <li><a href="#note-10" onclick="highlightLink(this)">学习#d3</a></li>
-                        <li><a href="#note-9" onclick="highlightLink(this)">学习#d2</a></li>
-                        <li><a href="#note-8" onclick="highlightLink(this)">总之就是又开始学习了</a></li>
-                        <li><a href="#note-7" onclick="highlightLink(this)">好用的ae插件</a></li>
+                        <li><a href="#note-13">Random Poetry Composition</a></li>
+                        <li><a href="#note-12">abt献给阿尔吉侬的花束</a></li>
+                        <li><a href="#note-11">学习#d4</a></li>
+                        <li><a href="#note-10">学习#d3</a></li>
+                        <li><a href="#note-9">学习#d2</a></li>
+                        <li><a href="#note-8">总之就是又开始学习了</a></li>
+                        <li><a href="#note-7">好用的ae插件</a></li>
                     </ul>
                 </li>
                 <li><span class="column-date">2025.12</span>
                     <ul>
-                        <li><a href="#note-6" onclick="highlightLink(this)">个人2025年度原画师</a></li>
-                        <li><a href="#note-5" onclick="highlightLink(this)">Some Interpretion on The Catcher in the Rye</a></li>
-                        <li><a href="#note-4" onclick="highlightLink(this)">可能要跟哲学过一辈子了……</a></li>
+                        <li><a href="#note-6">个人2025年度原画师</a></li>
+                        <li><a href="#note-5">Some Interpretion on The Catcher in the Rye</a></li>
+                        <li><a href="#note-4">可能要跟哲学过一辈子了……</a></li>
                     </ul>
                 </li>
                 <li><span class="column-date">2025.11</span>
                     <ul>
-                        <li><a href="#note-3" onclick="highlightLink(this)">abt地下室手记</a></li>
-                        <li><a href="#note-2" onclick="highlightLink(this)">来点abt作画的小作文</a></li>
-                        <li><a href="#note-1" onclick="highlightLink(this)">The Fault in Our Stars</a></li>
+                        <li><a href="#note-3">abt地下室手记</a></li>
+                        <li><a href="#note-2">来点abt作画的小作文</a></li>
+                        <li><a href="#note-1">The Fault in Our Stars</a></li>
                     </ul>
                 </li>
             </ul>
@@ -1336,7 +1395,8 @@
 
     <!-- 目录高亮 -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        (function (highlightLink) {
+            document.addEventListener('DOMContentLoaded', function() {
             // 1. 定义滚动容器（必须对应你 CSS 中设置 overflow 的那个 div）
             const scrollContainer = document.querySelector('.content-container');
             // 2. 获取目录中所有的链接
@@ -1398,6 +1458,8 @@
                 });
             });
         });
+    });
+        
     </script>
     
     <!-- 搜索 -->
@@ -1485,7 +1547,7 @@
                 }
             });
         });
-    })();
+    });
     </script>
 </body>
 </html>
