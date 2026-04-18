@@ -24,6 +24,15 @@
                         // 阻止默认跳转（防止瞬间跳动，改为平滑滚动）
                         e.preventDefault();
 
+                        // 检查笔记是否被隐藏（由于标签筛选）
+                        const wasHidden = targetNote.classList.contains('hidden');
+                        
+                        // 如果笔记被隐藏，临时显示它以进行滚动计算
+                        if (wasHidden) {
+                            targetNote.classList.remove('hidden');
+                            targetNote.style.opacity = '0'; // 临时设置为透明，避免视觉跳动
+                        }
+
                         // --- A. 计算滚动位置 ---
                         const containerRect = scrollContainer.getBoundingClientRect();
                         const noteRect = targetNote.getBoundingClientRect();
@@ -34,6 +43,15 @@
                             behavior: 'smooth'
                         });
 
+                        // 恢复笔记的隐藏状态（如果需要）
+                        if (wasHidden) {
+                            // 等待滚动完成后再隐藏
+                            setTimeout(() => {
+                                targetNote.classList.add('hidden');
+                                targetNote.style.opacity = ''; // 恢复透明度
+                            }, 500);
+                        }
+
                         // --- B. 施加高亮效果 ---
                         // 重置其他笔记样式
                         document.querySelectorAll('.note').forEach(n => {
@@ -43,16 +61,18 @@
                             n.style.transform = 'scale(1)';
                         });
 
-                        // 目标笔记高亮
+                        // 目标笔记高亮（即使被隐藏也要显示高亮）
                         targetNote.style.borderColor = '#584738';
                         targetNote.style.boxShadow = '0 0 20px rgba(88, 71, 56, 0.2)';
                         targetNote.style.transform = 'scale(1.01)';
+                        targetNote.style.zIndex = '10'; // 确保高亮在顶部
 
                         // --- C. 自动恢复 ---
                         setTimeout(() => {
                             targetNote.style.borderColor = '#eee';
                             targetNote.style.boxShadow = 'none';
                             targetNote.style.transform = 'scale(1)';
+                            targetNote.style.zIndex = '';
                         }, 2500);
 
                         // --- D. 移动端收起菜单 (根据你 HTML 中的 ID 修正) ---
@@ -232,6 +252,17 @@
         
         <!-- 正文 -->
         <div class="content-container">
+            <!-- Tag filter controls -->
+            <div class="tag-filter-container" id="tagFilterContainer">
+                <div class="tag-filter-header">
+                    <div class="tag-filter-title">标签筛选</div>
+                    <button class="tag-filter-clear" id="clearTagFilter" disabled>清除筛选</button>
+                </div>
+                <div class="tag-filter-tags" id="tagFilterTags">
+                    <!-- Tags will be dynamically inserted here -->
+                </div>
+            </div>
+
             <!-- <div class="note" id="note-">
                 <div class="note-header">
                     <div class="note-title">标题</div>
@@ -1546,6 +1577,230 @@
                     nResults.style.display = 'none';
                 }
             });
+        });
+    });
+
+    // Tag filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const tagFilterContainer = document.getElementById('tagFilterContainer');
+        const tagFilterTags = document.getElementById('tagFilterTags');
+        const clearTagFilter = document.getElementById('clearTagFilter');
+        const notes = document.querySelectorAll('.note');
+        
+        if (!tagFilterContainer || !tagFilterTags) return;
+
+        // Collect all unique tags and their counts
+        const tagMap = new Map();
+        
+        notes.forEach(note => {
+            const tags = note.querySelectorAll('.note-tag');
+            tags.forEach(tag => {
+                const tagText = tag.textContent.trim();
+                if (tagText) {
+                    tagMap.set(tagText, (tagMap.get(tagText) || 0) + 1);
+                }
+            });
+        });
+
+        // Sort tags by count (descending)
+        const sortedTags = Array.from(tagMap.entries()).sort((a, b) => b[1] - a[1]);
+
+        // Create tag filter elements
+        sortedTags.forEach(([tagName, count]) => {
+            const tagElement = document.createElement('div');
+            tagElement.className = 'tag-filter-tag';
+            tagElement.dataset.tag = tagName;
+            tagElement.innerHTML = `
+                <span class="tag-filter-tag-text">${tagName}</span>
+                <span class="tag-filter-tag-count">${count}</span>
+            `;
+            
+            tagElement.addEventListener('click', () => {
+                toggleTagFilter(tagName);
+            });
+            
+            tagFilterTags.appendChild(tagElement);
+        });
+
+        // Initialize tag click handlers on note tags
+        document.querySelectorAll('.note-tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tagName = this.textContent.trim();
+                toggleTagFilter(tagName);
+                
+                // Scroll to filter container if needed
+                const rect = tagFilterContainer.getBoundingClientRect();
+                if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                    tagFilterContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        });
+
+        // Clear filter button
+        clearTagFilter.addEventListener('click', () => {
+            clearAllFilters();
+        });
+
+        let activeTags = new Set();
+
+        function toggleTagFilter(tagName) {
+            if (activeTags.has(tagName)) {
+                activeTags.delete(tagName);
+            } else {
+                activeTags.add(tagName);
+            }
+            
+            updateFilterState();
+            filterNotes();
+        }
+
+        function clearAllFilters() {
+            activeTags.clear();
+            updateFilterState();
+            filterNotes();
+        }
+
+        function updateFilterState() {
+            // Update tag filter tags
+            document.querySelectorAll('.tag-filter-tag').forEach(tagEl => {
+                const tag = tagEl.dataset.tag;
+                if (activeTags.has(tag)) {
+                    tagEl.classList.add('active');
+                } else {
+                    tagEl.classList.remove('active');
+                }
+            });
+            
+            // Update note tags
+            document.querySelectorAll('.note-tag').forEach(tagEl => {
+                const tag = tagEl.textContent.trim();
+                if (activeTags.has(tag)) {
+                    tagEl.classList.add('active');
+                } else {
+                    tagEl.classList.remove('active');
+                }
+            });
+            
+            // Update clear button
+            clearTagFilter.disabled = activeTags.size === 0;
+        }
+
+        function filterNotes() {
+            const hasActiveTags = activeTags.size > 0;
+            
+            notes.forEach(note => {
+                const noteTags = Array.from(note.querySelectorAll('.note-tag'))
+                    .map(tag => tag.textContent.trim());
+                
+                if (!hasActiveTags) {
+                    // Show all notes
+                    note.classList.remove('hidden');
+                    note.classList.add('filtered');
+                } else {
+                    // Check if note has any active tag
+                    const hasMatchingTag = noteTags.some(tag => activeTags.has(tag));
+                    
+                    if (hasMatchingTag) {
+                        note.classList.remove('hidden');
+                        note.classList.add('filtered');
+                    } else {
+                        note.classList.add('hidden');
+                        note.classList.remove('filtered');
+                    }
+                }
+            });
+
+            // Update filter count display
+            const visibleNotes = Array.from(notes).filter(note => !note.classList.contains('hidden')).length;
+            const filterTitle = document.querySelector('.tag-filter-title');
+            if (filterTitle) {
+                if (activeTags.size > 0) {
+                    filterTitle.textContent = `标签筛选 (${visibleNotes}/${notes.length})`;
+                } else {
+                    filterTitle.textContent = '标签筛选';
+                }
+            }
+        }
+
+        // Initialize
+        updateFilterState();
+    });
+
+    // Scroll-based left-bar link highlighting
+    document.addEventListener('DOMContentLoaded', function() {
+        const contentContainer = document.querySelector('.content-container');
+        const leftBarLinks = document.querySelectorAll('.left-bar a');
+        const notes = document.querySelectorAll('.note');
+        
+        if (!contentContainer || leftBarLinks.length === 0) return;
+
+        // Function to update active link based on scroll position
+        function updateActiveLink() {
+            // Get the scroll position within the content container
+            const scrollTop = contentContainer.scrollTop;
+            const containerHeight = contentContainer.clientHeight;
+            
+            let activeNoteId = null;
+            let minDistance = Infinity;
+            
+            // Find the note that's closest to the center of the viewport
+            notes.forEach(note => {
+                if (note.classList.contains('hidden')) return; // Skip hidden notes
+                
+                const noteRect = note.getBoundingClientRect();
+                const noteTop = note.offsetTop;
+                const noteHeight = note.offsetHeight;
+                
+                // Calculate distance from note center to viewport center
+                const noteCenter = noteTop + noteHeight / 2;
+                const viewportCenter = scrollTop + containerHeight / 2;
+                const distance = Math.abs(noteCenter - viewportCenter);
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    activeNoteId = note.id;
+                }
+            });
+            
+            // Update left-bar links
+            leftBarLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                const noteId = href.substring(1); // Remove the '#'
+                
+                if (noteId === activeNoteId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initial update
+        updateActiveLink();
+        
+        // Update on scroll with debouncing for performance
+        let scrollTimeout;
+        contentContainer.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateActiveLink, 100);
+        });
+        
+        // Also update when window is resized
+        window.addEventListener('resize', updateActiveLink);
+        
+        // Update when notes are filtered
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    updateActiveLink();
+                }
+            });
+        });
+        
+        // Observe each note for class changes (for filtering)
+        notes.forEach(note => {
+            observer.observe(note, { attributes: true });
         });
     });
     </script>

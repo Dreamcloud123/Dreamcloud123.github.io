@@ -673,6 +673,119 @@ a:hover {
     border: 1px solid #cec1ab;
     text-decoration: none;
     transition: all 0.2s;
+    cursor: pointer;
+}
+
+.note-tag:hover {
+    background-color: #f5f0e8;
+    transform: translateY(-1px);
+}
+
+.note-tag.active {
+    background-color: #584738;
+    color: white;
+    border-color: #584738;
+}
+
+/* Tag filter controls */
+.tag-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fbf7f1;
+    border-radius: 10px;
+    border: 1px solid #cec1ab;
+}
+
+.tag-filter-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tag-filter-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #584738;
+}
+
+.tag-filter-clear {
+    background-color: #e8dfd3;
+    border: 1px solid #cec1ab;
+    color: #584738;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag-filter-clear:hover {
+    background-color: #d9cdbc;
+}
+
+.tag-filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag-filter-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cec1ab;
+    color: #b59e7d;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag-filter-tag:hover {
+    background-color: #f5f0e8;
+}
+
+.tag-filter-tag.active {
+    background-color: #584738;
+    color: white;
+    border-color: #584738;
+}
+
+.tag-filter-tag-count {
+    font-size: 0.7rem;
+    background-color: #e8dfd3;
+    color: #584738;
+    padding: 1px 5px;
+    border-radius: 8px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.tag-filter-tag.active .tag-filter-tag-count {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Note filtering */
+.note.hidden {
+    display: none;
+}
+
+.note.filtered {
+    opacity: 1;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* 相册 */
@@ -1660,6 +1773,43 @@ a:hover {
     .note-photo-container img {
         flex: 0 0 calc(50% - 10px); /* 手机端一行 2 张 */
         height: 150px;
+    }
+
+    /* Tag filter mobile adaptations */
+    .tag-filter-container {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .tag-filter-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .tag-filter-title {
+        font-size: 0.9rem;
+    }
+
+    .tag-filter-clear {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+        align-self: flex-end;
+    }
+
+    .tag-filter-tags {
+        gap: 4px;
+    }
+
+    .tag-filter-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
+    .tag-filter-tag-count {
+        font-size: 0.6rem;
+        padding: 1px 4px;
+        min-width: 14px;
     }
 
     /* 8. 公告板/弹窗适配 */
