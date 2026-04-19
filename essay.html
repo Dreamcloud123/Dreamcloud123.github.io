@@ -663,7 +663,7 @@
                         <div class="note-tags">
                             <a href="#" class="note-tag">政治</a>
                             <a href="#" class="note-tag">学习</a>
-                            <a href="#" class="note-tag">读书</a>
+                            <a href="#" class="note-tag">阅读</a>
                             <a href="#" class="note-tag">瞎写的别喷</a>
                         </div>
                     </div>
@@ -687,7 +687,7 @@
                         <div class="note-mood"></div>
                         <div class="note-tags">
                             <a href="#" class="note-tag">碎碎念</a>
-                            <a href="#" class="note-tag">读书</a>
+                            <a href="#" class="note-tag">阅读</a>
                             <a href="#" class="note-tag">政治</a>
                         </div>
                     </div>
@@ -765,7 +765,7 @@
                         <div class="note-mood"></div>
                         <div class="note-tags">
                             <a href="#" class="note-tag">碎碎念</a>
-                            <a href="#" class="note-tag">读书</a>
+                            <a href="#" class="note-tag">阅读</a>
                         </div>
                     </div>
                 </div>
@@ -1350,29 +1350,6 @@
         });
      </script>
 
-    <!-- 标签查找 -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const tags = document.querySelectorAll('.note-tag')
-        const searchInput = document.getElementById('noteSearchInput')
-        tags.forEach (tag => {
-            tag.addEventListener('click', function () {
-                let tagName = this.innerText.replace('#', '').trim();
-                if (searchInput) {
-                    searchInput.value=tagName
-                    const event = new Event('input', { bubbles: true });
-                    searchInput.dispatchEvent(event);
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    searchInput.focus
-                }
-            });
-        });
-    });
-    </script>
-
     <!-- 图片轮播 -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1424,75 +1401,6 @@
     });
     </script>
 
-    <!-- 目录高亮 -->
-    <script>
-        (function (highlightLink) {
-            document.addEventListener('DOMContentLoaded', function() {
-            // 1. 定义滚动容器（必须对应你 CSS 中设置 overflow 的那个 div）
-            const scrollContainer = document.querySelector('.content-container');
-            // 2. 获取目录中所有的链接
-            const directoryLinks = document.querySelectorAll('.left-bar a');
-
-            directoryLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // 获取 href 中的 ID (例如 "note-18")
-                    const targetId = this.getAttribute('href').split('#')[1];
-                    const targetNote = document.getElementById(targetId);
-
-                    if (targetNote && scrollContainer) {
-                        // 阻止浏览器默认跳转，由 JS 实现平滑滚动和变色
-                        e.preventDefault();
-
-                        // --- A. 平滑跳转逻辑 ---
-                        const containerTop = scrollContainer.getBoundingClientRect().top;
-                        const noteTop = targetNote.getBoundingClientRect().top;
-                        const currentScroll = scrollContainer.scrollTop;
-
-                        // 重点：计算笔记相对于容器顶部的偏移
-                        // 这里的 20 是顶端留白的距离，数字越小笔记靠得越上
-                        scrollContainer.scrollTo({
-                            top: currentScroll + (noteTop - containerTop) - 20,
-                            behavior: 'smooth'
-                        });
-
-                        // --- B. 棕色高亮逻辑 ---
-                        // 先重置所有笔记的样式，防止多个笔记同时高亮
-                        document.querySelectorAll('.note').forEach(n => {
-                            n.style.transition = 'all 0.5s ease';
-                            n.style.borderColor = '#eee'; // 恢复你 CSS 里的默认边框色
-                            n.style.boxShadow = 'none';
-                            n.style.transform = 'scale(1)';
-                        });
-
-                        // 给目标笔记施加棕色高亮效果
-                        targetNote.style.borderColor = '#584738'; // 你的标题棕色
-                        targetNote.style.boxShadow = '0 0 20px rgba(88, 71, 56, 0.2)';
-                        targetNote.style.transform = 'scale(1.01)'; // 轻微放大效果，更醒目
-
-                        // --- C. 自动重置逻辑 ---
-                        // 2.5秒后恢复原状
-                        setTimeout(() => {
-                            targetNote.style.borderColor = '#eee';
-                            targetNote.style.boxShadow = 'none';
-                            targetNote.style.transform = 'scale(1)';
-                        }, 2500);
-
-                        // --- D. 移动端兼容 ---
-                        // 如果在手机上，点击后自动收起左侧栏
-                        const leftBar = document.querySelector('.left-bar');
-                        if (leftBar && leftBar.classList.contains('active')) {
-                            leftBar.classList.remove('active');
-                            const toggleBtn = document.querySelector('.toggle-btn');
-                            if (toggleBtn) toggleBtn.classList.remove('active');
-                        }
-                    }
-                });
-            });
-        });
-    });
-        
-    </script>
-    
     <!-- 搜索 -->
     <script>
         (function() {
@@ -1727,7 +1635,7 @@
         updateFilterState();
     });
 
-    // Scroll-based left-bar link highlighting
+    // 高亮目录链接
     document.addEventListener('DOMContentLoaded', function() {
         const contentContainer = document.querySelector('.content-container');
         const leftBarLinks = document.querySelectorAll('.left-bar a');
@@ -1742,26 +1650,37 @@
             const containerHeight = contentContainer.clientHeight;
             
             let activeNoteId = null;
-            let minDistance = Infinity;
             
-            // Find the note that's closest to the center of the viewport
+            // Find the note whose top is within 0.15vh of the viewport top
             notes.forEach(note => {
                 if (note.classList.contains('hidden')) return; // Skip hidden notes
                 
-                const noteRect = note.getBoundingClientRect();
                 const noteTop = note.offsetTop;
                 const noteHeight = note.offsetHeight;
                 
-                // Calculate distance from note center to viewport center
-                const noteCenter = noteTop + noteHeight / 2;
-                const viewportCenter = scrollTop + containerHeight / 2;
-                const distance = Math.abs(noteCenter - viewportCenter);
-                
-                if (distance < minDistance) {
-                    minDistance = distance;
+                // Calculate the distance from note top to viewport top
+                const distanceFromTop = Math.abs(noteTop - scrollTop);
+            
+                // If note top is within threshold of viewport top, highlight it
+                if (distanceFromTop <= 300 ) {
                     activeNoteId = note.id;
                 }
             });
+            
+            // If no note is within threshold, find the note that's currently at the top
+            if (!activeNoteId) {
+                notes.forEach(note => {
+                    if (note.classList.contains('hidden')) return;
+                    
+                    const noteTop = note.offsetTop;
+                    const noteHeight = note.offsetHeight;
+                    
+                    // Check if note is currently visible at the top of viewport
+                    if (noteTop <= scrollTop && noteTop + noteHeight > scrollTop) {
+                        activeNoteId = note.id;
+                    }
+                });
+            }
             
             // Update left-bar links
             leftBarLinks.forEach(link => {
