@@ -12,12 +12,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 1. 获取容器和链接
             const scrollContainer = document.querySelector('.content-container');
-            const directoryLinks = document.querySelectorAll('.left-bar a');
+            const directoryLinks = document.querySelectorAll('.left-bar a, .right-bar-update a');
 
             directoryLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     // 获取 href 中的 ID (例如 "note-29")
-                    const targetId = this.getAttribute('href').substring(1);
+                    const href = this.getAttribute('href');
+                    // 处理两种格式: "#note-29" 或 "essay.html#note-29"
+                    const targetId = href.includes('#') ? href.split('#')[1] : href.substring(1);
                     const targetNote = document.getElementById(targetId);
 
                     if (targetNote && scrollContainer) {
@@ -1530,7 +1532,6 @@
 
     <!-- 搜索 -->
     <script>
-        (function() {
         document.addEventListener('DOMContentLoaded', function() {
             const nInput = document.getElementById('noteSearchInput');
             const nResults = document.getElementById('noteSearchResults');
@@ -1613,9 +1614,10 @@
                 }
             });
         });
-    });
+    </script>
 
-    // Tag filtering functionality
+    <!-- Tag filtering functionality -->
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
         const tagFilterContainer = document.getElementById('tagFilterContainer');
         const tagFilterTags = document.getElementById('tagFilterTags');
