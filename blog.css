@@ -3,6 +3,12 @@
     font-family: "Songti SC","Times New Roman",Georgia,Serif;
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        font-family: "SimSun", "宋体", "Songti SC", serif;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
